@@ -4,7 +4,7 @@
 }
 body{
 	margin:0;
-    font-family: var(--fonts)!important;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif!important;
 	font-size:1rem;
 	font-weight:400;
 	line-height:1.5;
