@@ -27,11 +27,25 @@ export default function () {
           </div>
           <div className="ara_area">
             <button className="ara_btn">
-              Mükemmel bul
+              Ara
             </button>
           </div>
         </div>
         <div className="row">
+        <div className="col-lg-4 sehir_response">
+            <div className="filter_src">
+              <h3>Şehir</h3>
+              <div className="slc_area">
+                <select>
+                  <option>Sırala</option>
+                  <option>Maaş</option>
+                  <option>Tarih</option>
+                  <option>Poüler</option>
+                </select>
+                <ArrowBottom size={20} color="#111" />
+              </div>
+            </div>
+          </div>
           <div className="col-lg-4">
             <div className="filter_src">
               <h3>Göre sırala</h3>

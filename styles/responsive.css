@@ -7,6 +7,9 @@
         display: block;
         margin-right: unset;
     }
+    .navbar-collapse {
+        display: none;
+    }
     .menu_list .menu_a {
         display: -webkit-box;
         margin-left: 0px;
@@ -21,6 +24,58 @@
     }
     .sirket {
         margin-left: 0;
+    }
+    .show {
+        display: block!important;
+    }
+    .find_job_landing {
+        display: block;
+        justify-items: flex-end;
+        width: 100%;
+    }
+    .find_job_landing .aciklama {
+        width: 100%!important;
+        text-align: center;
+    }
+    .find_job_landing .aciklama p {
+        width: 100%;
+    }
+    .find_job_landing .aciklama_image img {
+        display: none;
+    }
+    .footer {
+        display: block;
+        text-align: center;
+        align-self: center;
+    }
+    .footer .logo_text {
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .bolge_area {
+        display: none!important;
+    }
+    .search_area {
+        width: 100%;
+    }
+    .filter_src {
+        margin-bottom: 18px;
+    }
+    .sehir_response {
+        display: block!important;
+    }
+    .flex {
+        display: block;
+    }
+    .update {
+        width: 100%;
+        margin-right: 0px;
+    }
+    .added {
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10px;
     }
 }
 

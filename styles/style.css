@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+
 :root {
     --fonts: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     --logo: 'Montserrat Alternates', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
-
 
 body {
     padding: 0px;
@@ -67,6 +67,10 @@ body {
     color: #fff;
 }
 
+.menu_responsive {
+    display: contents;
+}
+
 .navbar {
     padding: 15px 0px!important;
 }
@@ -92,13 +96,15 @@ button:focus {
     margin-bottom: 20px;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.123);
 }
+.sehir_response {
+    display: none;
+}
 
 .arama_alani .search_area {
     background-color: #fff;
     padding: 0px 20px;
     display: flex;
     align-items: center;
-    width: 100%;
     padding-right: 0px;
 }
 
@@ -424,7 +430,8 @@ div.firma_istek p:last-child {
     margin-left: auto;
 }
 .footer_link a {
-    margin-left: 28px;
+    margin-right: 14px;
+    margin-left: 14px;
     color: #111;
     text-decoration: none;
     font-weight: 600;
