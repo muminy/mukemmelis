@@ -26,6 +26,10 @@ class MyDocument extends Document {
             rel="preconnect"
             href="https://fonts.googleapis.com"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
           <meta charSet="utf-8" />
           <meta
             httpEquiv="x-ua-compatible"
@@ -83,10 +87,7 @@ class MyDocument extends Document {
             sizes="16x16"
             href="/icons/favicon-16x16.png"
           />
-          <link
-            rel="manifest"
-            href="/manifest.json"
-          ></link>
+          <link rel="manifest" href="/manifest.json"></link>
           <meta
             name="apple-mobile-web-app-title"
             content="Puuwto"
