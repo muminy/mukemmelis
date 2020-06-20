@@ -24,16 +24,16 @@ export default function () {
         <div className="home_page">
           <header>Yeni ve popüler işler</header>
           <div className="row">
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6">
               <IlanCard />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6">
               <IlanCard />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6">
               <IlanCard />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6">
               <IlanCard />
             </div>
           </div>

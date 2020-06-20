@@ -71,6 +71,7 @@
     border: 0px;
     display: none;
     outline: none;
+    cursor: pointer;
 }
 button:focus {
     outline: none;
@@ -144,12 +145,12 @@ button:focus {
     background-color: #fff;
     min-width: 20%;
 }
-
-
 .filter_src h3 {
     font-size: 16px;
     font-weight: 600;
     color: #111;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .filter_src select {
@@ -226,6 +227,7 @@ button:focus {
     font-weight: 800;
     font-size: 16px;
     margin-bottom: 0px;
+    margin-top: 0px;
 }
 
 .is_ilan_card header .is_tipi img {
