@@ -1,0 +1,500 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --fonts: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --logo: 'Montserrat Alternates', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--fonts)!important;
+}
+
+
+.layout {
+    font-family: var(--fonts)!important;
+}
+.header {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.logo_text {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 800;
+    color: #060918;
+    font-family: var(--logo);
+    letter-spacing: 1px;
+    border-radius: 3px;
+    display: flex;
+    line-height: 20px;
+}
+
+.menu_list {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu_list .menu_a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    margin-left: 50px;
+    font-size: 14px;
+}
+.menu_list .menu_a:hover {
+    text-decoration: underline;
+}
+.sirket {
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 14px;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+    background-color: #0026ff;
+    border-radius: 5px;
+    border: 0px;
+}
+.sirket:hover {
+    background-color: #213ee4;
+    color: #fff;
+}
+
+.navbar {
+    padding: 15px 0px!important;
+}
+.resp_btn {
+    background-color: transparent;
+    border: 0px;
+    display: none;
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+
+.is_ara {
+    padding: 20px 0px;
+    background-color: #f1f4f8;
+}
+
+.arama_alani {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.123);
+}
+
+.arama_alani .search_area {
+    background-color: #fff;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-right: 0px;
+}
+
+.arama_alani .search_area .user_search_input {
+    border: 0px;
+    padding: 15px 15px;
+    outline: none;
+    width: 100%;
+}
+.arama_alani .bolge_area {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    min-width: 20%;
+}
+.arama_alani .bolge_area select {
+    border: 0px;
+    padding: 0px 20px;
+    outline: none;
+    width: 100%;
+}
+.arama_alani .ara_btn {
+    border: 0px;
+    background-color: #fff;
+    padding: 0px 20px;
+}
+
+.arama_alani .ara_btn {
+    background-color: #eee;
+    color: #111;
+    height: 100%;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 17px;
+    width: 100%;
+}
+.arama_alani .ara_btn:hover {
+    background-color: #ddd;
+}
+.ara_area {
+    padding: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #fff;
+    min-width: 20%;
+}
+
+
+.filter_src h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+}
+
+.filter_src select {
+    width: 100%;
+    border: 0px;
+    background-color: #fff;
+    padding: 10px 0px;
+    padding-left: 15px;
+    outline: none;
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+}
+
+.slc_area {
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    padding-right: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.sil_all {
+    margin-top: auto;
+    height: 100%;
+}
+
+.sil_all button {
+    margin-top: auto;
+}
+
+
+.tum_isler {
+    padding: 20px 0px;
+}
+.tum_isler header {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.is_ilan_card {
+    border-left: 1px solid #eee;
+    border-bottom: 3px solid #ddd;
+    border-right: 3px solid #ddd;
+    border-top: 1px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 28px;
+    display: block;
+    color: #212121;
+    text-decoration: none;
+}
+
+.is_ilan_card:hover {
+    border-left: 1px solid #111111;
+    border-bottom: 3px solid #111111;
+    border-right: 3px solid #111111;
+    border-top: 1px solid #111111;
+    color: #000;
+}
+
+.is_ilan_card header {
+    margin-bottom: 15px;
+}
+
+.is_ilan_card header .yer {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.is_ilan_card header h3 {
+    font-weight: 800;
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.is_ilan_card header .is_tipi img {
+    width: 15px;
+    height: 15px;
+}
+
+.is_ilan_card header .is_tipi {
+    font-size: 13px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.is_ilan_card header .is_tipi .name {
+    margin-left: 10px;
+}
+.yetenekler_all {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+.yetenekler_all .yetenek {
+    padding: 3px 15px;
+    margin-right: 5px;
+    background-color: #213ee417;
+    color: #213ee4;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.is_ilan_card .basvur_btn_card {
+    width: 100%;
+    background-color: #fff;
+    color: #111;
+    border: 1px solid #ddd;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+
+.is_ilan_card .basvur_btn_card:hover {
+    background-color: #eee;
+    border: 1px solid rgb(197, 197, 197);
+}
+
+.header_article header {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.header_article .is_tipi {
+    display: flex;
+    align-items: center;
+}
+.header_article .is_tipi img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+.firma_istek {
+    padding: 40px 0px;
+}
+.firma_istek p {
+    font-size: 15px;
+    line-height: 22px;
+}
+div.firma_istek p:last-child {
+    margin-bottom: 38px;
+}
+.firma_istek h3 {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.nitelikler {
+    
+    margin-bottom: 38px;
+}
+.nitelikler .nitelik::before {
+    content: '*';
+    margin-right: 10px;
+}
+
+.padd_v {
+    padding: 40px 0px;
+}
+.is_detay {
+    padding: 20px;
+    margin-top: 20px;
+    border-left: 1px solid #eee;
+    border-bottom: 3px solid #ddd;
+    border-right: 3px solid #ddd;
+    border-top: 1px solid #eee;
+    border-radius: 5px;
+}
+.is_detay header {
+    display: flex;
+    margin-bottom: 18px;
+}
+.firma_card {
+    margin-right: auto;
+}
+.firma_card .firmaAd {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 25px;
+}
+
+.firma_card .firma_yer {
+    font-size: 14px;
+}
+
+.firma_sayilar {
+    display: flex;
+    margin-bottom: 18px;
+}
+
+.group h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.group {
+    width: 50%;
+}
+.group .value_group {
+    font-size: 15px;
+}
+
+.firma_aciklama h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.firma_aciklama p {
+    font-size: 15px;
+}
+
+.basvur_big {
+    border-width: 0px;
+    background-color: #213ee4;
+    width: 100%;
+    color: #f1f4f8;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+.basvur_big:hover{
+    background-color: #324cdf;
+}
+
+.find_job_landing {
+    display: flex;
+    padding: 30px 0px;
+    align-items: center;
+}
+.find_job_landing .aciklama {
+    width: 50%;
+    margin-right: auto;
+}
+.find_job_landing .aciklama h3 {
+    font-size: 30px;
+    font-weight: 900;
+    margin-bottom: 28px;
+}
+.find_job_landing .aciklama p {
+    font-size: 15px;
+    width: 70%;
+}
+.find_job_landing .aciklama_image {
+    width: 50%;
+}
+.find_job_landing .aciklama_image img {
+    width: 100%; 
+}
+.home_page {
+    padding:50px 0px;
+}
+.home_page header {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 28px;
+}
+
+.footer {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.footer_bg {
+    background-color: #f3f6fc;
+}
+
+.footer_link {
+    margin-left: auto;
+}
+.footer_link a {
+    margin-left: 28px;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.update {
+    width: 70%;
+    margin-right: 20px;
+}
+
+.upg_header header {
+    font-size: 26px;
+    font-weight: 900;
+}
+
+.update header {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.upg_header {
+    padding: 20px 0px;
+}
+
+.update time {
+    font-size: 14px;
+}
+
+.update .content {
+    width: 100%;
+    margin-right: 20px;
+}
+
+.flex {
+    display: flex;
+    margin-bottom: 28px;
+    padding: 25px 0px;
+    padding-bottom: 0px;
+}
+
+.added {
+    width: 30%;
+    margin-left: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    border-left: 1px solid #eee;
+    border-bottom: 3px solid #ddd;
+    border-right: 3px solid #ddd;
+    border-top: 1px solid #eee;
+    border-radius: 5px;
+    display: inline-table;
+}
+
+
+.added > header {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.degisiklik_list {
+    color: #111;
+}
+.degisiklik_list .added_list::before {
+    content: '+';
+    margin-right: 10px;
+}
+.degisiklik_list .delete_list::before {
+    content: '-';
+    margin-right: 10px;
+}

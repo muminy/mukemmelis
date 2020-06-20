@@ -1,0 +1,32 @@
+
+@media only screen and (max-width: 1000px) {
+    .resp_btn {
+        display: block;
+    }
+    .menu_list {
+        display: block;
+        margin-right: unset;
+    }
+    .menu_list .menu_a {
+        display: -webkit-box;
+        margin-left: 0px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    .menu_list .menu_a:last-child {
+        margin-bottom: 15px;
+    }
+    .menu_list .sirket {
+        margin-left: 0px;
+    }
+    .sirket {
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
