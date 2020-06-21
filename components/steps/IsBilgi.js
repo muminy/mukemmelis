@@ -17,12 +17,6 @@ export default function ({
   const [currentSartValue, setCurrentSartValue] = useState(
     "",
   );
-  const [val, setVal] = useState(validate);
-  useEffect(() => {
-    if (val) {
-      setTimeout(() => getValidate(false), 3000);
-    }
-  }, [val]);
   const [
     currentNitelikValue,
     setCurrentNitelikValue,
@@ -67,7 +61,7 @@ export default function ({
 
   return (
     <React.Fragment>
-      {val ? (
+      {validate ? (
         <div className="error_001">
           Tüm alanları eksiksiz bir şekilde doldurunuz
         </div>

@@ -14,17 +14,9 @@ export default function ({
   validate,
   getValidate
 }) {
-
-  const [val, setVal] = useState(validate);
-
-  useEffect(() => {
-    if(val){
-      setTimeout(() => getValidate(false), 3000)
-    }
-  }, [val])
   return (
     <React.Fragment>
-      {val ? <div className="error_001">Tüm alanları eksiksiz bir şekilde doldurunuz</div> : null}
+      {validate ? <div className="error_001">Tüm alanları eksiksiz bir şekilde doldurunuz</div> : null}
       <div className="form_group">
         <header>Şirket adı</header>
         <input

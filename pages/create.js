@@ -92,7 +92,7 @@ export default function () {
       firmaAciklama === "" ||
       tip === "default" ||
       deneyim === "default" ||
-      sehir === ""
+      sehir === "default"
     ) {
       setSteps((prevState) => {
         prevState[0].validate = true;
@@ -103,7 +103,12 @@ export default function () {
         prevState[0].active = true;
         return [...prevState];
       });
-    } else if (is === ''  || isAciklama === '' || niteliks.length === 0 || sartlar === 0) {
+    } else if (
+      is === "" ||
+      isAciklama === "" ||
+      niteliks.length === 0 ||
+      sartlar.length === 0
+    ) {
       setSteps((prevState) => {
         prevState[1].validate = true;
         const activeIndex = prevState.findIndex(
@@ -114,16 +119,22 @@ export default function () {
         return [...prevState];
       });
     }
+
+    setTimeout(setValidate, 3000);
   };
 
-  const validateHandle = (index, val) => {
-    if(!val){
-      setSteps((prevState) => {
-        prevState[index].validate = false;
-        return [...prevState];
-      });
-    }
-  }
+  const setValidate = () => {
+    setSteps((prevStates) => {
+      prevStates[0].validate = false;
+      prevStates[1].validate = false;
+      prevStates[2].validate = false;
+      return [...prevStates];
+    });
+  };
+
+  useEffect(() => {
+    console.log(steps);
+  }, [steps]);
 
   return (
     <div className="container">
@@ -179,7 +190,6 @@ export default function () {
                 location={sehir}
                 nData={niteliks}
                 sData={sartlar}
-                getValidate={val => validateHandle(index, val)}
               />
             ) : null,
           )}
