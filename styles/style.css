@@ -1,4 +1,15 @@
-
+input:focus {
+    outline: none;
+}
+textarea:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+select:focus {
+    outline: none;
+}
 .header {
     padding: 15px 0px;
     display: flex;
@@ -25,7 +36,8 @@
     text-decoration: none;
     color: #000;
     font-weight: 700;
-    margin-left: 50px;
+    margin-left: 25px;
+    margin-right: 25px;
     font-size: 14px;
 }
 .menu_list .menu_a:hover {
@@ -282,6 +294,7 @@ button:focus {
 .firma_istek p {
     font-size: 15px;
     line-height: 22px;
+    margin-top: 0px;
 }
 div.firma_istek p:last-child {
     margin-bottom: 38px;
@@ -488,4 +501,204 @@ div.firma_istek p:last-child {
 .degisiklik_list .delete_list::before {
     content: '-';
     margin-right: 10px;
+}
+.create_area {
+    margin-bottom: 50px;
+}
+.create_area > header {
+    padding: 30px 0px;
+}
+.create_area > header > .logo_text {
+    text-align: center;
+    display: block;
+    font-size: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+}
+.create_area header > p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.steps {
+    text-align: center;
+    display: flex;
+    padding: 30px 0px;
+    justify-content: center;
+}
+.steps > .step {
+    display: flex;
+    align-items: center;
+}
+
+.steps > .step > .info_step {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.steps > .step .step_number {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #585858;
+    font-size: 20px;
+    border: 1px solid #ddd;
+}
+.steps > .step.active > .step_number {
+    border: 1px solid #4b21e4;
+    background-color: #4b21e4;
+    color: #fff;
+}
+
+.steps > .step:not(:last-child) > .info_step::after {
+    content: '';
+    width: 40px;
+    margin-right: 30px;
+    height: 2px;
+    background-color: #213ee442;
+    display: block;
+    margin-left: 30px;
+}
+.create_form {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.create_form > .form_group {
+    margin-bottom: 30px;
+}
+.create_form > .form_group > header {
+    margin-bottom: 6px;
+}
+.create_form {
+    padding: 30px 0px;
+}
+.create_form > .form_group > header {
+    font-weight: 700;
+}
+
+.create_form .form_group > input {
+    width: 100%;
+    border: 2px solid #04061323;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.create_form > .form_group > input:focus {
+    border: 2px solid #213ee4;
+}
+
+.create_form .form_group > textarea {
+    width: 100%;
+    border: 2px solid #04061323;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.create_form > .form_group > textarea:focus {
+    border: 2px solid #213ee4;
+}
+.create_form .form_group > select {
+    width: 100%;
+    border: 2px solid #04061323;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.create_form > .form_group > select:focus {
+    border: 2px solid #213ee4;
+}
+
+.footer_content {
+    display: flex;
+}
+
+.footer_content > .sol_sag {
+    margin-left: auto;
+}
+
+.footer_content > .sol_sag > button {
+    padding: 5px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer_content > .sol_sag > button:first-child {
+    background-color: #213ee4;
+    border: 2px solid #213ee4;
+    color: #fff;
+    margin-right: 10px;
+}
+.footer_content > .sol_sag > button:last-child {
+    background-color: #fff;
+    border: 2px solid #213ee4;
+    color: #213ee4;
+    margin-left: 10px;
+}
+
+.niteliks {
+    margin-bottom: 10px;
+}
+.group_datas {
+    display: flex;
+}
+.group_datas button {
+    border: 2px solid #04061323;
+    padding: 0px 0px;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 0px 20px;
+    height: 50px;
+    background-color: transparent;
+}
+.group_datas input {
+    width: 100%;
+    height: 50px;
+    border: 2px solid #04061323;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.nitelik_list {
+    margin-bottom: 10px;
+}
+.nitelik_list button {
+    height: 30px;
+    border: 2px solid #04061323;
+    padding: 0px 0px;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 0px 20px;
+    background-color: transparent;
+    margin-left: auto;
+}
+.l_flex {
+    display: flex;
+    margin-bottom: 5px;
+}
+.nitelik_list > .l_flex > .list_n::before {
+    content: '*';
+    margin-right: 10px;
+}
+.footer_content {
+    margin-top: 20px;
+}
+
+.OnaylaBtn {
+    padding: 5px 90px!important;
+}
+
+.full_width {
+    width: 100%!important;
+}
+
+
+.error_001 {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #e4214b21;
+    color: #e4214b;
+    padding: 10px;
 }

@@ -5,10 +5,16 @@ import { MenuIcon } from "../constant/iconsvg";
 
 export default function () {
   const [dropdown, setDropdown] = useState(false);
-  const [responsiveClass, setResponsiveClass] = useState(`collapse navbar-collapse ${dropdown ? 'show' : null}`)
+  const [responsiveClass, setResponsiveClass] = useState(
+    `collapse navbar-collapse ${dropdown ? "show" : null}`,
+  );
   useEffect(() => {
-    setResponsiveClass(`collapse navbar-collapse ${dropdown ? 'show' : null}`)
-  }, [dropdown])
+    setResponsiveClass(
+      `collapse navbar-collapse ${
+        dropdown ? "show" : null
+      }`,
+    );
+  }, [dropdown]);
   return (
     <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container">
@@ -31,11 +37,10 @@ export default function () {
             <Link href="/update">
               <a className="menu_a">Güncellemeler</a>
             </Link>
-            <Link href="/">
-              <a className="menu_a">İletişim</a>
-            </Link>
           </div>
-            <button className="sirket">İşveren</button>
+          <Link href="/create">
+            <a className="sirket">İşveren</a>
+          </Link>
         </div>
       </div>
     </nav>
