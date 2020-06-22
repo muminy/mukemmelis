@@ -71,7 +71,7 @@ export default function ({
         <input
           onChange={(text) => getIs(text.target.value)}
           value={is}
-          placeholder="Apple, Inc - Google, Inc"
+          placeholder="Frontend developer"
         />
       </div>
       <div className="form_group">
@@ -82,7 +82,7 @@ export default function ({
             getIsAciklama(text.target.value)
           }
           value={isAciklama}
-          placeholder="Apple, Inc - Google, Inc"
+          placeholder="Biz bir aileyiz!"
         ></textarea>
       </div>
       <div className="form_group">
@@ -103,7 +103,7 @@ export default function ({
               setCurrentNitelikValue(text.target.value)
             }
             className="niteliks"
-            placeholder="+5000 Tl aylık"
+            placeholder="İstenen bir nitelik"
             value={currentNitelikValue}
           />
           <button onClick={() => NitelikEkle()}>
@@ -129,7 +129,7 @@ export default function ({
               setCurrentSartValue(text.target.value)
             }
             className="niteliks"
-            placeholder="+5000 Tl aylık"
+            placeholder="İş şartları"
             value={currentSartValue}
           />
           <button onClick={() => SartEkle()}>Ekle</button>

@@ -12,7 +12,10 @@ export default function ({
   sehir,
   getSehir,
   validate,
-  getValidate
+  web,
+  basvuru,
+  getBasvuru,
+  getWeb
 }) {
   return (
     <React.Fragment>
@@ -33,7 +36,7 @@ export default function ({
           onChange={(text) =>
             getHakkinda(text.target.value)
           }
-          placeholder="Apple, Inc - Google, Inc"
+          placeholder="Geleceğe yatırım!"
         ></textarea>
       </div>
       <div className="form_group">
@@ -70,6 +73,22 @@ export default function ({
           <option value="Kocaeli">Kocaeli</option>
           <option value="Ankara">Ankara</option>
         </select>
+      </div>
+      <div className="form_group">
+        <header>Web site</header>
+        <input
+          value={web}
+          onChange={(text) => getWeb(text.target.value)}
+          placeholder="https://mukemmelis.com"
+        />
+      </div>
+      <div className="form_group">
+        <header>Başvuru adresi</header>
+        <input
+          value={basvuru}
+          onChange={(text) => getBasvuru(text.target.value)}
+          placeholder="https://mukemmelis.com/basvuru"
+        />
       </div>
     </React.Fragment>
   );

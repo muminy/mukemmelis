@@ -702,3 +702,41 @@ div.firma_istek p:last-child {
     color: #e4214b;
     padding: 10px;
 }
+
+.basarili_kayit {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #21e46c21;
+    color: #117437;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.success_ilan {
+    display: flex;
+    height: calc(100vh - 300px);
+    justify-content: center;
+    align-items: center;
+}
+.success_ilan .align_center {
+    width: 50%;
+    text-align: center;
+}
+.ilana_git {
+    text-align: center;
+    color: #fff;
+    background-color: #000000;
+    border: 1px solid #000000;
+    padding: 10px 0px;
+    width: 240px;
+    margin: 0 auto;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+}
+.ilana_git:hover {
+    background-color: #111111;
+}
