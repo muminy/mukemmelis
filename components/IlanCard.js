@@ -1,18 +1,21 @@
 import Link from "next/link";
+import slugify from "slugify";
 
-export default function () {
+export default function ({location, is, firma, id}) {
+
+  const slug = slugify(is, {
+    lower: true
+  });
   return (
-    <Link href="/ilan/[slug]" as="/ilan/mm">
+    <Link href="/ilan/[id]/[slug]" as={`/ilan/${id}/${slug}`}>
       <a className="is_ilan_card">
         <header>
-          <div className="yer">İstanbul</div>
-          <h3>UI Designer</h3>
+          <div className="yer">{location}</div>
+          <h3>{is}</h3>
           <div className="is_tipi">
-            <img src="https://lh3.googleusercontent.com/proxy/XIFPEFgj2kWi9G_5zmbjGcpQuuK7VRZzLcRPz8zxnh5IVpvQJh9wHIWJd1NiRAth-wU-TNiNvhPXWI1ppRaVSg" />
-            <div className="name">Google, Inc</div>
+            <div className="name">{firma}</div>
           </div>
         </header>
-        <button className="basvur_btn_card">Başvur</button>
       </a>
     </Link>
   );

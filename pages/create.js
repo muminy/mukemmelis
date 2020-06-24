@@ -56,7 +56,7 @@ export default function () {
   const [isAciklamaToHtml, setisToHtml] = useState([]);
 
   useEffect(() => {
-    BasvurDB().then(responseJson =>
+    getLastId().then(responseJson =>
       responseJson.forEach(last_child => setIlanId(last_child.data().ilan_id + 1))
     );
   }, []);
@@ -148,7 +148,8 @@ export default function () {
         firma_ad: name,
         firma_aciklama: firmaAciklama.split("\n"),
         deneyim: deneyim,
-        ilan_id: ilan_id
+        ilan_id: ilan_id,
+        create_date: new Date().toISOString()
       };
 
       const lastId = await getLastId();

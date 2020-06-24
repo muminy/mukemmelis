@@ -87,6 +87,22 @@
         padding-top: 5px;
         padding-bottom: 48px;
     }
+    .create_form {
+        width: 100%;
+    }
+    .step {
+        display: none!important;
+    }
+    .step.active {
+        display: flex!important;
+    }
+    .info_step::after {
+        display: none!important;
+    }
+    .OnaylaBtn {
+        text-align: center;
+        padding: 5px 20px!important;
+    }
 }
 
 
