@@ -1,4 +1,10 @@
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+  useRef,
+  createRef,
+} from "react";
+import firebase from "../../lib/loadFirebase";
 
 export default function ({
   name,
@@ -15,17 +21,44 @@ export default function ({
   web,
   basvuru,
   getBasvuru,
-  getWeb
+  getWeb,
+  file,
+  getFile,
 }) {
+  const inputRef = createRef();
+
+  useEffect(() => {
+    if(file !== ''){
+      inputRef.current.files = file
+    } else {
+      inputRef.current.files = null
+    }
+  }, [file])
+
+
   return (
     <React.Fragment>
-      {validate ? <div className="error_001">Tüm alanları eksiksiz bir şekilde doldurunuz</div> : null}
+      {validate ? (
+        <div className="error_001">
+          Tüm alanları eksiksiz bir şekilde doldurunuz
+        </div>
+      ) : null}
       <div className="form_group">
         <header>Şirket adı</header>
         <input
           value={name}
           onChange={(text) => getName(text.target.value)}
           placeholder="Apple, Inc - Google, Inc"
+        />
+      </div>
+      <div className="form_group">
+        <header>Şirket Resmi</header>
+        <input
+          type="file"
+          onChange={(event) => getFile(event.target.files)}
+          placeholder="Apple, Inc - Google, Inc"
+          accept=".png"
+          ref={inputRef}
         />
       </div>
       <div className="form_group">

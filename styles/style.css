@@ -125,6 +125,10 @@ button:focus {
   border: 0px;
   background-color: #fff;
   padding: 0px 20px;
+  cursor: pointer;
+}
+.arama_alani .ara_btn:focus {
+  outline: none;
 }
 
 .arama_alani .ara_btn {
@@ -187,6 +191,7 @@ button:focus {
 
 .tum_isler {
   padding: 20px 0px;
+  padding-bottom: 0px;
 }
 .tum_isler header {
   font-size: 15px;
@@ -194,23 +199,32 @@ button:focus {
 }
 
 .is_ilan_card {
-  border-left: 1px solid #eee;
-  border-bottom: 3px solid #ddd;
-  border-right: 3px solid #ddd;
-  border-top: 1px solid #eee;
+  border-left: 1px solid #111;
+  border-bottom: 3px solid #111;
+  border-right: 3px solid #111;
+  border-top: 1px solid #111;
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 28px;
-  display: block;
+  display: flex;
   color: #212121;
   text-decoration: none;
+  width: 100%;
+}
+.is_ilan_card > img {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #111;
+  margin-right: 10px;
+  border-radius: 10px;
 }
 
 .is_ilan_card:hover {
-  border-left: 1px solid #111111;
-  border-bottom: 3px solid #111111;
-  border-right: 3px solid #111111;
-  border-top: 1px solid #111111;
+  border-left: 1px solid #0026ff;
+  border-bottom: 3px solid #0026ff;
+  border-right: 3px solid #0026ff;
+  border-top: 1px solid #0026ff;
   color: #000;
 }
 
@@ -864,6 +878,7 @@ div.firma_istek p:last-child {
 
 .tags_src {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .tags_src > .tag_src {
@@ -874,6 +889,11 @@ div.firma_istek p:last-child {
     background-color: #f5f5f5;
     display: flex;
     align-items: center;
+    margin-bottom: 15px;
+}
+
+.not_search {
+  margin-bottom: 15px;
 }
 
 .tag_src > button {
@@ -894,4 +914,76 @@ div.firma_istek p:last-child {
     color: brown;
     padding: 10px 0px;
     font-weight: bold;
+}
+
+.ilan_a_card {
+  display: block;
+  border-left: 1px solid #eee;
+  border-bottom: 3px solid #eee;
+  border-right: 3px solid #eee;
+  border-top: 1px solid #eee;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+.header_ilan > header {
+  color: #212529;
+}
+.ilan_a_card:hover {
+  border-left: 1px solid #3234a7;
+  border-bottom: 3px solid #3234a7;
+  border-right: 3px solid #3234a7;
+  border-top: 1px solid #3234a7;
+}
+
+.firma_infos {
+  display: flex;
+}
+
+.header_ilan {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.header_ilan > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  margin-right: 18px;
+  margin-bottom: auto;
+}
+.header_ilan > header > h3 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  line-height: 18px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.header_ilan > header > .firma_adi {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.firma_infos {
+  padding: 10px;
+}
+.aciklama_ii {
+  width: 33.33%;
+  text-align: center;
+}
+.aciklama_ii > .lo {
+  font-weight: 700;
+  font-size: 17px;
+  color: #212121;
+  line-height: 22px;
+}
+.aciklama_ii > .val {
+  font-size: 12px;
+  color: #000;
+  line-height: 18px;
 }

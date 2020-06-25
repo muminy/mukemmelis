@@ -153,7 +153,7 @@ export default function Home() {
               )}
             </header>
           ) : (
-            <header>Yeni ve popüler işler</header>
+            <header className="not_search">Yeni ve popüler işler</header>
           )}
         </div>
         {ilan.length ? (
@@ -161,13 +161,17 @@ export default function Home() {
             {ilan.map((item, index) => (
               <div
                 key={index}
-                className="col-lg-3 col-md-6"
+                className="col-lg-6 col-md-12"
               >
                 <IlanCard
                   firma={item.firma_ad}
                   location={item.sehir}
                   is={item.is_baslik}
                   id={item.ilan_id}
+                  deneyim={item.deneyim}
+                  tip={item.tip}
+                  src={`https://firebasestorage.googleapis.com/v0/b/mukemmelis-5d0ef.appspot.com/o/firma%2F${item.slug_image}?alt=media`}
+                  slug={item.slug}
                 />
               </div>
             ))}

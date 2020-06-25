@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import IlanCard from "../components/IlanCard";
 import { useState, useEffect } from "react";
-import getBasvuru from "../lib/basvuru";
+import getBasvuru, { getImage } from "../lib/basvuru";
 
 export default function () {
   const [ilan, setIlans] = useState([]);
@@ -42,13 +42,17 @@ export default function () {
               {ilan.map((item, index) => (
                 <div
                   key={index}
-                  className="col-lg-3 col-md-6"
+                  className="col-lg-6 col-md-12"
                 >
                   <IlanCard
                     firma={item.firma_ad}
                     location={item.sehir}
                     is={item.is_baslik}
                     id={item.ilan_id}
+                    slug={item.slug}
+                    deneyim={item.deneyim}
+                    tip={item.tip}
+                    src={`https://firebasestorage.googleapis.com/v0/b/mukemmelis-5d0ef.appspot.com/o/firma%2F${item.slug_image}?alt=media`}
                   />
                 </div>
               ))}

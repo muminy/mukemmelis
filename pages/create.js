@@ -1,4 +1,3 @@
-import Layout from "../components/Layout";
 import Logotext from "../components/Logotext";
 import Steps from "../components/Steps";
 import CreateFooter from "../components/CreateFooter";
@@ -6,11 +5,13 @@ import FirmaStep from "../components/steps/FirmaStep";
 import { useState, useEffect } from "react";
 import SartNitelik from "../components/steps/IsBilgi";
 import IlanSayfa from "../components/IlanSayfa";
-import BasvurDB, {
+import {
   setBasvuruData,
   getLastId,
+  setImageFirma
 } from "../lib/basvuru";
 import Link from "next/link";
+import slugify from "slugify";
 export default function () {
   const [steps, setSteps] = useState([
     {
@@ -54,12 +55,19 @@ export default function () {
   );
   const [link, setLink] = useState("");
   const [isAciklamaToHtml, setisToHtml] = useState([]);
+  const [file, setFile] = useState('');
 
   useEffect(() => {
-    getLastId().then(responseJson =>
-      responseJson.forEach(last_child => setIlanId(last_child.data().ilan_id + 1))
+    getLastId().then((responseJson) =>
+      responseJson.forEach((last_child) =>
+        setIlanId(last_child.data().ilan_id + 1),
+      ),
     );
   }, []);
+
+  useEffect(() => {
+    console.log(file)
+  }, [file])
 
   useEffect(() => {
     const satir = firmaAciklama.split("\n");
@@ -102,6 +110,7 @@ export default function () {
   };
 
   const handleOnayla = async () => {
+    console.log(file)
     if (
       name === "" ||
       firmaAciklama === "" ||
@@ -109,7 +118,8 @@ export default function () {
       deneyim === "default" ||
       sehir === "default" ||
       web === "" ||
-      basvuru === ""
+      basvuru === "",
+      file[0].type !== 'image/png'
     ) {
       setSteps((prevState) => {
         prevState[0].validate = true;
@@ -136,6 +146,12 @@ export default function () {
         return [...prevState];
       });
     } else {
+      const slug_image = slugify(`${ilan_id || 1} ${name}`, {
+        lower: true
+      });
+      const slug_isBaslik = slugify(is, {
+        lower: true
+      });
       const jsonData = {
         basvuru_web: basvuru,
         web_site: web,
@@ -148,18 +164,18 @@ export default function () {
         firma_ad: name,
         firma_aciklama: firmaAciklama.split("\n"),
         deneyim: deneyim,
-        ilan_id: ilan_id,
-        create_date: new Date().toISOString()
+        ilan_id: ilan_id || 1,
+        create_date: new Date().toISOString(),
+        slug: slug_isBaslik,
+        slug_image: slug_image
       };
-
-      const lastId = await getLastId();
       setBasvuruData(
         jsonData,
-        await getLastId(),
         (responseJson) => {
           if (responseJson.code === 200) {
             setSuccess(true);
-            setLink("/ilan/" + ilan_id);
+            setImageFirma(file[0], slug_image);
+            setLink("/ilan/" + (ilan_id || 1) + '/' + slug_isBaslik);
           }
         },
       );
@@ -175,6 +191,7 @@ export default function () {
       return [...prevStates];
     });
   };
+
   return (
     <div className="container">
       <div
@@ -194,7 +211,7 @@ export default function () {
           <div className="success_ilan">
             <div className="align_center">
               Kayıt Başarılı
-              <Link href="/ilan/[slug]" as={link}>
+              <Link href="/ilan/[id]/[slug]" as={link}>
                 <a className="ilana_git">İlana git</a>
               </Link>
             </div>
@@ -223,6 +240,8 @@ export default function () {
                     getHakkinda={(get) =>
                       setFirmaAciklama(get)
                     }
+                    file={file}
+                    getFile={value => setFile(value)}
                     tip={tip}
                     getTip={(get) => setTip(get)}
                     deneyim={deneyim}
