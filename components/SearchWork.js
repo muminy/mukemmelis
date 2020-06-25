@@ -3,7 +3,6 @@ import {
   LocationIcon,
   ArrowBottom,
 } from "../constant/iconsvg";
-import { useState } from "react";
 
 export default function ({
   isAra,
@@ -14,7 +13,7 @@ export default function ({
   sehir,
   getSehir,
   is,
-  getIs
+  getIs,
 }) {
   return (
     <div className="is_ara">
@@ -25,7 +24,7 @@ export default function ({
             <input
               className="user_search_input"
               value={is}
-              onChange={text => getIs(text.target.value)}
+              onChange={(text) => getIs(text.target.value)}
               placeholder="Yer, makam, pozisyon arayın"
             />
           </div>
@@ -53,11 +52,15 @@ export default function ({
             <div className="filter_src">
               <h3>Şehir</h3>
               <div className="slc_area">
-                <select>
-                  <option>Sırala</option>
-                  <option>Maaş</option>
-                  <option>Tarih</option>
-                  <option>Poüler</option>
+                <select
+                  value={sehir}
+                  onChange={(text) =>
+                    getSehir(text.target.value)
+                  }
+                >
+                  <option value="">bir tip seçin</option>
+                  <option value="Kocaeli">Kocaeli</option>
+                  <option value="Ankara">Ankara</option>
                 </select>
                 <ArrowBottom size={20} color="#111" />
               </div>
