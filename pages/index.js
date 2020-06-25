@@ -55,11 +55,11 @@ export default function () {
             </div>
           </div>
         ) : (
-          <div class="loader_width">
-            <div class="item item-1"></div>
-            <div class="item item-2"></div>
-            <div class="item item-3"></div>
-            <div class="item item-4"></div>
+          <div className="loader_width">
+            <div className="item item-1"></div>
+            <div className="item item-2"></div>
+            <div className="item item-3"></div>
+            <div className="item item-4"></div>
           </div>
         )}
         <div className="find_job_landing">

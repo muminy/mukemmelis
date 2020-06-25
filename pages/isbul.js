@@ -1,27 +1,160 @@
 import Layout from "../components/Layout";
 import SearchWork from "../components/SearchWork";
 import IlanCard from "../components/IlanCard";
-import getBasvuru from "../lib/basvuru";
+import getBasvuru, { basvuruAra } from "../lib/basvuru";
 import { useState, useEffect } from "react";
-
+import { DeleteIcon } from "../constant/iconsvg";
+import fetch from "node-fetch";
+import { api } from '../constant/api'
 export default function Home() {
+  const [tip, setTip] = useState("");
+  const [sehir, setSehir] = useState("");
+  const [deneyim, setDeneyim] = useState("");
+  const [src, setSrc] = useState(false);
   const [ilan, setIlans] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [is, setIs] = useState("");
+
+  const [jsonFilter, setJsonFilter] = useState({
+    tip: tip,
+    deneyim: deneyim,
+    sehir: sehir,
+    is: is,
+  });
+
+  const isAra = () => {
+    setLoading(true);
+    setIlans([]);
+    fetch(`${api}/ilan/search`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        is_tip: tip,
+        is_baslik: is,
+        is_deneyim: deneyim,
+        is_sehir: sehir,
+      }),
+    })
+      .then((responseJson) => responseJson.json())
+      .then((responseJson) => setIlans(responseJson))
+      .then(() => setLoading(false));
+  };
+
   useEffect(() => {
-    getBasvuru().then((responseJson) =>
-      responseJson.forEach((documents) =>
-        setIlans((prevState) => {
-          prevState.push(documents.data());
-          return [...prevState];
-        }),
-      ),
-    );
-  }, []);
+    isAra();
+  }, [jsonFilter]);
+
+  const deleteTip = () => {
+    setTip("");
+    setJsonFilter({
+      tip: "",
+      sehir: jsonFilter.sehir,
+      deneyim: jsonFilter.deneyim,
+      is: jsonFilter.is,
+    });
+  };
+  const deleteSehir = () => {
+    setSehir("");
+    setJsonFilter({
+      tip: jsonFilter.tip,
+      sehir: "",
+      deneyim: jsonFilter.deneyim,
+      is: jsonFilter.is,
+    });
+  };
+
+  const deleteDeneyim = () => {
+    setDeneyim("");
+    setJsonFilter({
+      tip: jsonFilter.tip,
+      sehir: jsonFilter.sehir,
+      deneyim: "",
+      is: jsonFilter.is,
+    });
+  };
+
+  const deleteIs = () => {
+    setIs("");
+    setJsonFilter({
+      tip: jsonFilter.tip,
+      sehir: jsonFilter.sehir,
+      deneyim: jsonFilter.deneyim,
+      is: "",
+    });
+  };
+
+  const setAra = () => {
+    setJsonFilter({
+      tip: tip,
+      sehir: sehir,
+      deneyim: deneyim,
+      is: is,
+    });
+    setSrc(true);
+  };
+
+  useEffect(() => {
+    if (deneyim === "" && sehir === "" && tip === "" && is === '') {
+      setSrc(false)
+    }
+  }, [tip, sehir, deneyim, is]);
+
   return (
     <Layout>
-      <SearchWork />
+      <SearchWork
+        tip={tip}
+        getTip={(value) => setTip(value)}
+        sehir={sehir}
+        getSehir={(value) => setSehir(value)}
+        deneyim={deneyim}
+        getDeneyim={(value) => setDeneyim(value)}
+        isAra={() => setAra()}
+        getIs={(value) => setIs(value)}
+        is={is}
+      />
       <div className="container">
         <div className="tum_isler">
-          <header>Yeni ve popüler işler</header>
+          {src ? (
+            <header className="tags_src">
+              {jsonFilter.is === "" ? null : (
+                <div className="tag_src">
+                  {jsonFilter.is}
+                  <button onClick={() => deleteIs()}>
+                    <DeleteIcon size={20} color="#111" />
+                  </button>
+                </div>
+              )}
+              {jsonFilter.sehir === "" ? null : (
+                <div className="tag_src">
+                  {jsonFilter.sehir}
+                  <button onClick={() => deleteSehir()}>
+                    <DeleteIcon size={20} color="#111" />
+                  </button>
+                </div>
+              )}
+              {jsonFilter.tip === "" ? null : (
+                <div className="tag_src">
+                  {jsonFilter.tip}
+                  <button onClick={() => deleteTip()}>
+                    <DeleteIcon size={20} color="#111" />
+                  </button>
+                </div>
+              )}
+              {jsonFilter.deneyim === "" ? null : (
+                <div className="tag_src">
+                  {jsonFilter.deneyim}
+                  <button onClick={() => deleteDeneyim()}>
+                    <DeleteIcon size={20} color="#111" />
+                  </button>
+                </div>
+              )}
+            </header>
+          ) : (
+            <header>Yeni ve popüler işler</header>
+          )}
         </div>
         {ilan.length ? (
           <div className="row">
@@ -39,14 +172,19 @@ export default function Home() {
               </div>
             ))}
           </div>
-        ) : (
-          <div class="loader_width">
-            <div class="item item-1"></div>
-            <div class="item item-2"></div>
-            <div class="item item-3"></div>
-            <div class="item item-4"></div>
+        ) : loading ? null : (
+          <div className="not_found_src_data">
+            Eşleşen herrhangi bir ilan bulunamadı
           </div>
         )}
+        {loading ? (
+          <div className="loader_width">
+            <div className="item item-1"></div>
+            <div className="item item-2"></div>
+            <div className="item item-3"></div>
+            <div className="item item-4"></div>
+          </div>
+        ) : null}
       </div>
     </Layout>
   );
