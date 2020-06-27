@@ -27,10 +27,10 @@ export default (req, res) => {
               .is_baslik.toLowerCase()
               .indexOf(is_baslik.toLowerCase()) !== -1
           ) {
-            json_data.push(documents.data());
+            json_data.push(Object.assign(documents.data(), {docs: documents.id}));
           }
         } else {
-          json_data.push(documents.data());
+          json_data.push(Object.assign(documents.data(), {docs: documents.id}));
         }
       });
       res.json(json_data);

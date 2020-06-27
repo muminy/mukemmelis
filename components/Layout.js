@@ -1,8 +1,8 @@
 import Head from "next/head";
-import Header from "./Header";
+import Header, { AdminHeader } from "./Header";
 import Footer from "./Footer";
 
-export default function ({ children, title }) {
+export default function ({ children, title, admin }) {
   return (
     <React.Fragment>
       <Head>
@@ -10,7 +10,7 @@ export default function ({ children, title }) {
           {title} {title ? " |" : null} mukemmelis.com
         </title>
       </Head>
-      <Header />
+      {admin ? <AdminHeader /> : <Header />}
       <main>{children}</main>
       <Footer />
     </React.Fragment>

@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
 import SearchWork from "../components/SearchWork";
 import IlanCard from "../components/IlanCard";
-import getBasvuru, { basvuruAra } from "../lib/basvuru";
 import { useState, useEffect } from "react";
 import { DeleteIcon } from "../constant/iconsvg";
 import fetch from "node-fetch";
 import { api } from '../constant/api'
+import Loader from "../components/Loader";
 export default function Home() {
   const [tip, setTip] = useState("");
   const [sehir, setSehir] = useState("");
@@ -182,12 +182,7 @@ export default function Home() {
           </div>
         )}
         {loading ? (
-          <div className="loader_width">
-            <div className="item item-1"></div>
-            <div className="item item-2"></div>
-            <div className="item item-3"></div>
-            <div className="item item-4"></div>
-          </div>
+          <Loader />
         ) : null}
       </div>
     </Layout>

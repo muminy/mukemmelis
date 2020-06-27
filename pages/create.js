@@ -167,7 +167,8 @@ export default function () {
         ilan_id: ilan_id || 1,
         create_date: new Date().toISOString(),
         slug: slug_isBaslik,
-        slug_image: slug_image
+        slug_image: slug_image,
+        active: false
       };
       setBasvuruData(
         jsonData,

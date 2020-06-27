@@ -987,3 +987,98 @@ div.firma_istek p:last-child {
   color: #000;
   line-height: 18px;
 }
+
+.admin_yeni_ilan {
+  font-weight: 800;
+  font-size: 18px;
+  padding: 30px 0px;
+  padding-bottom: 10px;
+}
+
+.admin_yeni_ilan > p{
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+.ilan_details {
+  display: flex;
+  font-weight: 600;
+  font-size: 15px;
+  align-items: center;
+  background-color: #f7f7f74b;
+  border-radius: 4px;
+  border: 1px solid #f3f3f3af;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.ilan_details > .ax {
+  flex: .2;
+}
+.ilan_details > .firmax {
+  flex: .2;
+}
+.ilan_details > .nitelikx {
+  flex: .1;
+}
+.ilan_details > .sartx {
+  flex: .1;
+}
+.ilan_details > .tipx {
+  flex: .1;
+}
+.ilan_details > .tecrubex {
+  flex: .1;
+}
+.ilan_details > .islemx {
+  flex: .2;
+  justify-content: flex-end;
+  display: flex;
+}
+
+.i_btn_ilan {
+  padding: 0px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #f3f0ea;
+  color: #b87811;
+  padding: 3px 10px;
+  display: flex;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.i_btn_ilan:hover {
+  background-color: #eee4d1 ;
+}
+.s_btn_ilan {
+  padding: 0px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #eaf3ee;
+  color: #228b52;
+  padding: 3px 10px;
+  display: flex;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.s_btn_ilan:hover {
+  background-color: #a8ebc6 ;
+}
+
+.r_btn_ilan {
+  padding: 0px;
+  border: 0px;
+  border-radius: 5px;
+  background-color: #f3eaea;
+  color: #8b2622;
+  padding: 3px 10px;
+  display: flex;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.r_btn_ilan:hover {
+  background-color: #eebebe ;
+}
+.json_data {
+  text-decoration: none;
+}

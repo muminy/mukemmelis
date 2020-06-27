@@ -14,7 +14,7 @@ export default function () {
             <a href="https://github.com/vasdeJ/mukemmelis">
               Twitter
             </a>
-            <a href="https://github.com/vasdeJ/mukemmelis">
+            <a href="https://github.com/muminy/mukemmelis">
               Google play
             </a>
           </div>
