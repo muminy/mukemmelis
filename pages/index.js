@@ -66,7 +66,7 @@ export default function () {
             <div className="item item-4"></div>
           </div>
         )}
-        <div className="find_job_landing">
+        <div className="find_job_landing rvs">
           <div className="aciklama_image">
             <img src="/svg/ilanver.svg" />
           </div>

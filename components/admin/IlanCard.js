@@ -17,24 +17,24 @@ export default function ({
   deactive
 }) {
   return (
-    <div className="ilan_details">
-      <div className="ax">{is_baslik}</div>
-      <div className="firmax">{firma_ad}</div>
-      <div className="nitelikx">
+    <div className="row ilan_details">
+      <div className="col-lg-3 col-md-6 md_items col-sm-6 ucN">{is_baslik}</div>
+      <div className="col-lg-2 col-md-6 md_items col-sm-6 br_0">{firma_ad}</div>
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items">
         <Link href="/">
           <a className="json_data">JsonData</a>
         </Link>
       </div>
-      <div className="sartx">
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items">
         <Link href="/">
           <a className="json_data">JsonData</a>
         </Link>
       </div>
-      <div className="tipx">{tip}</div>
-      <div className="tecrubex">{deneyim}</div>
-      <div className="islemx">
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items">{tip}</div>
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items br_0">{deneyim}</div>
+      <div className="col-lg-3 islemx col-md-12 col-sm-12 md_items">
         <button className="i_btn_ilan">
-          <InfoIcon size={25} color="#b87811" />
+          incele
         </button>
         {active ? null : (
           <button
@@ -48,7 +48,7 @@ export default function ({
           onClick={() => active  ? deactive(docs) : deleteIlan(docs)}
           className="r_btn_ilan"
         >
-          <DeleteIcon size={25} color="#8b2622" />
+          {active ? 'İnactive' : 'Sil'}
         </button>
       </div>
     </div>

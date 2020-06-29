@@ -1,9 +1,8 @@
-import Layout from "./Layout";
 import Logotext from "./Logotext";
 
 export default function () {
   return (
-    <div className="footer_bg">
+    <div className={`footer_bg`}>
       <div className="container">
         <div className="footer">
           <Logotext />

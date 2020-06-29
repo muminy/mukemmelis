@@ -10,6 +10,7 @@ button:focus {
 select:focus {
   outline: none;
 }
+
 .header {
   padding: 15px 0px;
   display: flex;
@@ -29,37 +30,34 @@ select:focus {
 
 .menu_list {
   margin-left: auto;
-  margin-right: auto;
 }
 
 .menu_list .menu_a {
   text-decoration: none;
-  color: #000;
   font-weight: 700;
-  margin-left: 25px;
-  margin-right: 25px;
+  padding: 8px 20px;
   font-size: 14px;
 }
 .menu_list .menu_a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .sirket {
-  color: #fff;
-  font-weight: 500;
+  background-color: #5457f7;
+  padding: 8px 29px;
   text-decoration: none;
-  margin-left: 30px;
-  font-size: 14px;
-  padding: 10px 30px;
-  letter-spacing: 1px;
-  background-color: #0026ff;
-  border-radius: 5px;
-  border: 0px;
-}
-.sirket:hover {
-  background-color: #213ee4;
+  font-weight: 700;
   color: #fff;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  font-family: unset;
+  font-size: 14px;
+  display: block;
 }
 
+.sirket:hover {
+  color: #fff;
+  background-color: #6163ff;
+}
 .menu_responsive {
   display: contents;
 }
@@ -79,6 +77,10 @@ button:focus {
 }
 
 .is_ara {
+  padding: 20px 0px;
+  background-color: #f1f4f8;
+}
+.h_ii {
   padding: 20px 0px;
   background-color: #f1f4f8;
 }
@@ -165,9 +167,8 @@ button:focus {
   padding: 10px 0px;
   padding-left: 15px;
   outline: none;
-  -moz-appearance: none; /* Firefox */
-  -webkit-appearance: none; /* Safari and Chrome */
-  appearance: none;
+  border: 1px solid #eee;
+  border-radius: 3px;
 }
 
 .slc_area {
@@ -383,9 +384,11 @@ div.firma_istek p:last-child {
   text-align: center;
   padding: 10px 0px;
   text-decoration: none;
+  cursor: pointer;
 }
 .basvur_big:hover {
   background-color: #324cdf;
+  color: #fff;
 }
 
 .find_job_landing {
@@ -396,6 +399,7 @@ div.firma_istek p:last-child {
 .find_job_landing .aciklama {
   width: 50%;
   margin-right: auto;
+  text-align: center;
 }
 .find_job_landing .aciklama h3 {
   font-size: 30px;
@@ -405,6 +409,7 @@ div.firma_istek p:last-child {
 .find_job_landing .aciklama p {
   font-size: 15px;
   width: 70%;
+  margin: 0 auto;
 }
 .find_job_landing .aciklama_image {
   width: 50%;
@@ -428,8 +433,7 @@ div.firma_istek p:last-child {
 }
 
 .footer_bg {
-  background-color: #f3f6fc;
-  margin-top: 60px;
+  padding: 20px 0px;
 }
 
 .footer_link {
@@ -443,7 +447,20 @@ div.firma_istek p:last-child {
   font-weight: 600;
   font-size: 14px;
 }
-
+.footer_link {
+  display: flex;
+}
+.footer_link > a {
+  display: block;
+  border-bottom: 1px;
+  border-bottom-color: #919191;
+  border-bottom-style: dashed;
+}
+.footer_link > a:hover {
+  border-bottom: 1px dashed #151719;
+  transform: scale(1.1);
+  transition: all 0.1s ease-in-out;
+}
 .update {
   width: 70%;
   margin-right: 20px;
@@ -573,7 +590,6 @@ div.firma_istek p:last-child {
   margin-left: 30px;
 }
 .create_form {
-  width: 50%;
   margin: 0 auto;
   margin-bottom: 20px;
 }
@@ -875,21 +891,20 @@ div.firma_istek p:last-child {
   }
 }
 
-
 .tags_src {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .tags_src > .tag_src {
-    padding: 5px 10px;
-    padding-left: 25px;
-    border-radius: 20px;
-    margin-right: 20px;
-    background-color: #f5f5f5;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+  padding: 5px 10px;
+  padding-left: 25px;
+  border-radius: 20px;
+  margin-right: 20px;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .not_search {
@@ -897,23 +912,23 @@ div.firma_istek p:last-child {
 }
 
 .tag_src > button {
-    padding: 0px;
-    background-color: transparent;
-    border-width: 0px;
-    line-height: 10px;
-    margin-left: 10px;
-    cursor: pointer;
+  padding: 0px;
+  background-color: transparent;
+  border-width: 0px;
+  line-height: 10px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 .tag_src > button:focus {
-    outline: none;
+  outline: none;
 }
 
 .not_found_src_data {
-    text-align: center;
-    background-color: rgba(165, 42, 42, 0.062);
-    color: brown;
-    padding: 10px 0px;
-    font-weight: bold;
+  text-align: center;
+  background-color: rgba(165, 42, 42, 0.062);
+  color: brown;
+  padding: 10px 0px;
+  font-weight: bold;
 }
 
 .ilan_a_card {
@@ -925,15 +940,15 @@ div.firma_istek p:last-child {
   border-radius: 5px;
   text-decoration: none;
   margin-bottom: 20px;
+  color: unset;
 }
-.header_ilan > header {
-  color: #212529;
-}
+
 .ilan_a_card:hover {
-  border-left: 1px solid #3234a7;
-  border-bottom: 3px solid #3234a7;
-  border-right: 3px solid #3234a7;
-  border-top: 1px solid #3234a7;
+  border-left: 1px solid #dddddd;
+  border-bottom: 3px solid #dddddd;
+  border-right: 3px solid #dddddd;
+  border-top: 1px solid #dddddd;
+  color: unset;
 }
 
 .firma_infos {
@@ -951,9 +966,10 @@ div.firma_istek p:last-child {
 .header_ilan > img {
   width: 40px;
   height: 40px;
-  border-radius: 3px;
+  border-radius: 8px;
   margin-right: 18px;
   margin-bottom: auto;
+  padding: 5px;
 }
 .header_ilan > header > h3 {
   margin-bottom: 0px;
@@ -995,90 +1011,149 @@ div.firma_istek p:last-child {
   padding-bottom: 10px;
 }
 
-.admin_yeni_ilan > p{
+.admin_yeni_ilan > p {
   font-weight: 500;
   font-size: 14px;
   margin-top: 0px;
 }
 
 .ilan_details {
-  display: flex;
   font-weight: 600;
   font-size: 15px;
-  align-items: center;
   background-color: #f7f7f74b;
   border-radius: 4px;
   border: 1px solid #f3f3f3af;
   padding: 5px;
+  align-items: center;
   margin-bottom: 10px;
 }
-.ilan_details > .ax {
-  flex: .2;
-}
-.ilan_details > .firmax {
-  flex: .2;
-}
-.ilan_details > .nitelikx {
-  flex: .1;
-}
-.ilan_details > .sartx {
-  flex: .1;
-}
-.ilan_details > .tipx {
-  flex: .1;
-}
-.ilan_details > .tecrubex {
-  flex: .1;
-}
 .ilan_details > .islemx {
-  flex: .2;
-  justify-content: flex-end;
   display: flex;
 }
 
 .i_btn_ilan {
   padding: 0px;
   border: 0px;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #f3f0ea;
   color: #b87811;
   padding: 3px 10px;
-  display: flex;
   cursor: pointer;
   margin-left: 10px;
+  width: 50%;
+  margin-right: 5px;
+  text-align: center;
 }
 .i_btn_ilan:hover {
-  background-color: #eee4d1 ;
+  background-color: #eee4d1;
 }
 .s_btn_ilan {
   padding: 0px;
   border: 0px;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #eaf3ee;
   color: #228b52;
   padding: 3px 10px;
   display: flex;
   cursor: pointer;
   margin-left: 10px;
+  margin-right: 5px;
 }
 .s_btn_ilan:hover {
-  background-color: #a8ebc6 ;
+  background-color: #a8ebc6;
 }
 
 .r_btn_ilan {
   padding: 0px;
   border: 0px;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #f3eaea;
   color: #8b2622;
   padding: 3px 10px;
-  display: flex;
   cursor: pointer;
-  margin-left: 10px;
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 50%;
+}
+.ucN {
+  overflow: hidden; /* taşanları gizle */
+  white-space: nowrap; /* alt satıra hiç inme */
+  text-overflow: ellipsis; /* eğer uzunsa üç nokta koy */
 }
 .r_btn_ilan:hover {
-  background-color: #eebebe ;
+  background-color: #eebebe;
 }
 .json_data {
   text-decoration: none;
+}
+.dark_logo,
+.light_logo {
+  cursor: pointer;
+}
+.dark_logo > defs > linearGradient > .stop_1 {
+  stop-color: #fff;
+}
+.dark_logo > defs > linearGradient > .stop_2 {
+  stop-color: #fff;
+}
+.dark_logo:hover > defs > linearGradient > .stop_1 {
+  stop-color: #e96443 !important;
+}
+.dark_logo:hover > defs > linearGradient > .stop_2 {
+  stop-color: #904e95 !important;
+}
+.light_logo:hover > defs > linearGradient > .stop_1 {
+  stop-color: #e96443 !important;
+}
+.light_logo:hover > defs > linearGradient > .stop_2 {
+  stop-color: #904e95 !important;
+}
+
+.menu_icon,
+.dark_icon {
+  width: 35px;
+  height: 19px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.menu_icon > .line_1 {
+  width: 100%;
+  height: 3px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #111;
+}
+.menu_icon > .line_2 {
+  width: 80%;
+  height: 3px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  background-color: #111;
+}
+.menu_icon > .line_3 {
+  width: 50%;
+  height: 3px;
+  margin-bottom: 0px;
+  border-radius: 4px;
+  background-color: #111;
+}
+.navbar-light .navbar-toggler {
+  padding: 0px;
+  border-width: 0px;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: none;
+  box-shadow: unset !important;
+}
+
+svg:hover > defs > linearGradient > stop.stop_1 {
+  stop-color: #e96443;
+}
+svg:hover {
+  cursor: pointer;
+}
+svg:hover > defs > linearGradient > stop.stop_2 {
+  stop-color: #904e95;
 }

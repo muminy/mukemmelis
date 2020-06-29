@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 export default function () {
   return (
     <Layout>
-      <div className="is_ara">
+      <div className="h_ii">
         <div className="container">
           <div className="upg_header">
             <header className="upt_hdr">

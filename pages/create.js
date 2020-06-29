@@ -48,7 +48,7 @@ export default function () {
   const [sehir, setSehir] = useState("default");
   const [is, setIs] = useState("");
   const [web, setWeb] = useState("");
-  const [basvuru, setBasvuru] = useState("");
+  const [mail, setMail] = useState("");
   const [isAciklama, setIsAciklama] = useState("");
   const [firmaAciklamaToHtml, setFirmaToHtml] = useState(
     [],
@@ -118,7 +118,7 @@ export default function () {
       deneyim === "default" ||
       sehir === "default" ||
       web === "" ||
-      basvuru === "",
+      mail === "",
       file[0].type !== 'image/png'
     ) {
       setSteps((prevState) => {
@@ -153,7 +153,7 @@ export default function () {
         lower: true
       });
       const jsonData = {
-        basvuru_web: basvuru,
+        basvuru_mail: mail,
         web_site: web,
         tip: tip,
         sehir: sehir,
@@ -264,8 +264,8 @@ export default function () {
                     location={sehir}
                     nData={niteliks}
                     sData={sartlar}
-                    basvuru={basvuru}
-                    getBasvuru={(get) => setBasvuru(get)}
+                    mail={mail}
+                    getMail={(get) => setMail(get)}
                     web={web}
                     getWeb={(get) => setWeb(get)}
                   />

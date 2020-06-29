@@ -1,45 +1,46 @@
 import Logotext from "./Logotext";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { MenuIcon } from "../constant/iconsvg";
+
+const MenuIconLines = () => {
+  return (
+    <div className={`menu_icon`}>
+      <div className="line_1" />
+      <div className="line_2" />
+      <div className="line_3" />
+    </div>
+  )
+};
 
 export default function () {
-  const [dropdown, setDropdown] = useState(false);
-  const [responsiveClass, setResponsiveClass] = useState(
-    `collapse navbar-collapse ${dropdown ? "show" : null}`,
-  );
-  useEffect(() => {
-    setResponsiveClass(
-      `collapse navbar-collapse ${
-        dropdown ? "show" : null
-      }`,
-    );
-  }, [dropdown]);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className={`navbar navbar-expand-lg navbar-light`}>
       <div className="container">
         <Logotext />
         <button
-          className="resp_btn"
+          className="navbar-toggler"
           type="button"
-          onClick={() => setDropdown(!dropdown)}
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <MenuIcon size={15} color="#111" />
+          <MenuIconLines />
         </button>
-        <div className={responsiveClass}>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
           <div className="menu_list">
-            <Link href="/">
-              <a className="menu_a">Anasayfa</a>
-            </Link>
             <Link href="/isbul">
-              <a className="menu_a">İş bul</a>
+              <a className="menu_a">Find job</a>
             </Link>
             <Link href="/update">
-              <a className="menu_a">Güncellemeler</a>
+              <a className="menu_a">Updates</a>
             </Link>
           </div>
           <Link href="/create">
-            <a className="sirket">İşveren</a>
+            <a className="sirket">Create Job</a>
           </Link>
         </div>
       </div>
@@ -48,33 +49,26 @@ export default function () {
 }
 
 export function AdminHeader() {
-  const [dropdown, setDropdown] = useState(false);
-  const [responsiveClass, setResponsiveClass] = useState(
-    `collapse navbar-collapse ${dropdown ? "show" : null}`,
-  );
-  useEffect(() => {
-    setResponsiveClass(
-      `collapse navbar-collapse ${
-        dropdown ? "show" : null
-      }`,
-    );
-  }, [dropdown]);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light">
+    <nav className={`navbar navbar-expand-lg navbar-light`}>
       <div className="container">
         <Logotext />
         <button
-          className="resp_btn"
+          className="navbar-toggler"
           type="button"
-          onClick={() => setDropdown(!dropdown)}
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <MenuIcon size={15} color="#111" />
+          <MenuIconLines />
         </button>
-        <div className={responsiveClass}>
-          <div style={{marginRight: 0}} className="menu_list">
-            <Link href="/admin">
-              <a className="menu_a">Anasayfa</a>
-            </Link>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
+          <div className="menu_list">
             <Link href="/admin/ilanlar">
               <a className="menu_a">İlanlar</a>
             </Link>

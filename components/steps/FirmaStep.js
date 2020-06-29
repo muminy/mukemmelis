@@ -19,8 +19,8 @@ export default function ({
   getSehir,
   validate,
   web,
-  basvuru,
-  getBasvuru,
+  mail,
+  getMail,
   getWeb,
   file,
   getFile,
@@ -116,11 +116,11 @@ export default function ({
         />
       </div>
       <div className="form_group">
-        <header>Başvuru adresi</header>
+        <header>Başvuru Mail</header>
         <input
-          value={basvuru}
-          onChange={(text) => getBasvuru(text.target.value)}
-          placeholder="https://mukemmelis.com/basvuru"
+          value={mail}
+          onChange={(text) => getMail(text.target.value)}
+          placeholder="job@mukemmelis.com"
         />
       </div>
     </React.Fragment>

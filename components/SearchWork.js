@@ -1,7 +1,6 @@
 import {
   SearchIcon,
   LocationIcon,
-  ArrowBottom,
 } from "../constant/iconsvg";
 
 export default function ({
@@ -51,61 +50,52 @@ export default function ({
           <div className="col-lg-4 sehir_response">
             <div className="filter_src">
               <h3>Şehir</h3>
-              <div className="slc_area">
-                <select
-                  value={sehir}
-                  onChange={(text) =>
-                    getSehir(text.target.value)
-                  }
-                >
-                  <option value="">bir tip seçin</option>
-                  <option value="Kocaeli">Kocaeli</option>
-                  <option value="Ankara">Ankara</option>
-                </select>
-                <ArrowBottom size={20} color="#111" />
-              </div>
+              <select
+                value={sehir}
+                onChange={(text) =>
+                  getSehir(text.target.value)
+                }
+              >
+                <option value="">bir tip seçin</option>
+                <option value="Kocaeli">Kocaeli</option>
+                <option value="Ankara">Ankara</option>
+              </select>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="filter_src">
               <h3>Çalışma tipi</h3>
-              <div className="slc_area">
-                <select
-                  value={tip}
-                  onChange={(text) =>
-                    getTip(text.target.value)
-                  }
-                >
-                  <option value="">bir tip seçin</option>
-                  <option value="Uzaktan">Uzaktan</option>
-                  <option value="Tam zamanlı">
-                    Tam zamanlı
-                  </option>
-                  <option value="Yarı zamanlı">
-                    Yarı zamanlı
-                  </option>
-                  <option value="Stajyer">Stajyer</option>
-                </select>
-                <ArrowBottom size={20} color="#111" />
-              </div>
+              <select
+                value={tip}
+                onChange={(text) =>
+                  getTip(text.target.value)
+                }
+              >
+                <option value="">bir tip seçin</option>
+                <option value="Uzaktan">Uzaktan</option>
+                <option value="Tam zamanlı">
+                  Tam zamanlı
+                </option>
+                <option value="Yarı zamanlı">
+                  Yarı zamanlı
+                </option>
+                <option value="Stajyer">Stajyer</option>
+              </select>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="filter_src">
               <h3>İş seviyeniz</h3>
-              <div className="slc_area">
-                <select
-                  value={deneyim}
-                  onChange={(text) =>
-                    getDeneyim(text.target.value)
-                  }
-                >
-                  <option value="">bir tip seçin</option>
-                  <option value="Senior">Senior</option>
-                  <option value="Junior">Junior</option>
-                </select>
-                <ArrowBottom size={20} color="#111" />
-              </div>
+              <select
+                value={deneyim}
+                onChange={(text) =>
+                  getDeneyim(text.target.value)
+                }
+              >
+                <option value="">bir tip seçin</option>
+                <option value="Senior">Senior</option>
+                <option value="Junior">Junior</option>
+              </select>
             </div>
           </div>
         </div>

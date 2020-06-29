@@ -1,113 +1,147 @@
-
 @media only screen and (max-width: 1000px) {
-    .resp_btn {
-        display: block;
-    }
-    .menu_list {
-        display: block;
-        margin-right: unset;
-    }
-    .navbar-collapse {
-        display: none;
-    }
-    .menu_list .menu_a {
-        display: -webkit-box;
-        margin-left: 0px;
-        margin-bottom: 5px;
-        margin-top: 5px;
-    }
-    .menu_list .menu_a:last-child {
-        margin-bottom: 15px;
-    }
-    .menu_list .sirket {
-        margin-left: 0px;
-    }
-    .sirket {
-        margin-left: 0;
-    }
-    .show {
-        display: block!important;
-    }
-    .find_job_landing {
-        display: block;
-        justify-items: flex-end;
-        width: 100%;
-        padding: 15px 0px;
-    }
-    .find_job_landing .aciklama {
-        width: 100%!important;
-        text-align: center;
-    }
-    .find_job_landing .aciklama p {
-        width: 100%;
-    }
-    .find_job_landing .aciklama_image img {
-        display: none;
-    }
-    .footer {
-        display: block;
-        text-align: center;
-        align-self: center;
-    }
-    .footer .logo_text {
-        text-align: center;
-        display: block;
-        margin-bottom: 10px;
-    }
-    .bolge_area {
-        display: none!important;
-    }
-    .search_area {
-        width: 100%;
-    }
-    .filter_src {
-        margin-bottom: 8px;
-    }
-    .sehir_response {
-        display: block!important;
-    }
-    .flex {
-        display: block;
-    }
-    .update {
-        width: 100%;
-        margin-right: 0px;
-    }
-    .added {
-        width: 100%;
-        margin-left: 0px;
-        margin-top: 10px;
-    }
-    .is_detay {
-        margin-top: 0px;
-        margin-bottom: 28px;
-    }
-    .nitelikler:last-child { margin-bottom: 0px;}
-    .firma_istek {
-        padding-top: 5px;
-        padding-bottom: 48px;
-    }
-    .create_form {
-        width: 100%;
-    }
-    .step {
-        display: none!important;
-    }
-    .step.active {
-        display: flex!important;
-    }
-    .info_step::after {
-        display: none!important;
-    }
-    .OnaylaBtn {
-        text-align: center;
-        padding: 5px 20px!important;
-    }
+  .resp_btn {
+    display: block;
+  }
+  .menu_list {
+    display: block;
+    margin-right: unset;
+  }
+  .show {
+    text-align: center;
+  }
+  .md_items {
+    text-align: center;
+    padding: 10px 10px;
+  }
+  .ilan_details {
+    padding: 0px;
+  }
+  .col-md-6.md_items,
+  .col-md-3.md_items {
+    border-bottom: 1px solid #f3f3f3af;
+  }
+  .col-md-6.md_items:not(.br_0),
+    .col-md-3.md_items:not(.br_0) {
+    border-right: 1px solid #f3f3f3af;
+  }
+  .menu_list .menu_a {
+    display: block;
+    margin-left: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+  }
+  .menu_list .menu_a:last-child {
+    margin-bottom: 15px;
+  }
+  .sirket {
+    margin-left: 0px;
+    padding: 15px 60px;
+    font-size: 25px;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+  }
+  .find_job_landing {
+    display: block;
+    width: 100%;
+    padding: 15px 0px;
+  }
+  .rvs {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .find_job_landing .aciklama {
+    width: 100% !important;
+    text-align: center;
+    padding: 50px 0px;
+  }
+  .find_job_landing .aciklama p {
+    width: 100%;
+  }
+  .find_job_landing .aciklama_image,
+  img {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .footer {
+    display: block;
+    text-align: center;
+    align-self: center;
+  }
+  .footer .logo_text {
+    text-align: center;
+    display: block;
+  }
+  .footer_link {
+    justify-content: center;
+    margin-top: 18px;
+  }
+  .bolge_area {
+    display: none !important;
+  }
+  .search_area {
+    width: 100%;
+  }
+  .filter_src {
+    margin-bottom: 8px;
+  }
+  .sehir_response {
+    display: block !important;
+  }
+  .flex {
+    display: block;
+  }
+  .update {
+    width: 100%;
+    margin-right: 0px;
+  }
+  .added {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  .is_detay {
+    margin-top: 0px;
+    margin-bottom: 28px;
+  }
+  .nitelikler:last-child {
+    margin-bottom: 0px;
+  }
+  .firma_istek {
+    padding-top: 5px;
+    padding-bottom: 48px;
+  }
+  .create_form {
+    width: 100%;
+  }
+  .step {
+    display: none !important;
+  }
+  .step.active {
+    display: flex !important;
+  }
+  .info_step::after {
+    display: none !important;
+  }
+  .OnaylaBtn {
+    text-align: center;
+    padding: 5px 20px !important;
+  }
 }
 
-
-
-
-
-
-
+@media only screen and (max-width: 700px) {
+  .menu_list .menu_a:last-child {
+    margin-bottom: 20px;
+  }
+  .menu_list {
+    text-align: center;
+  }
+  .sirket {
+    padding: 15px 60px;
+    margin-top: 10px;
+    font-size: 25px;
+  }
+}
