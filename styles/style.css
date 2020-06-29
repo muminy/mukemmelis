@@ -433,11 +433,12 @@ div.firma_istek p:last-child {
 }
 
 .footer_bg {
-  padding: 20px 0px;
+  padding-top: 60px;
 }
 
 .footer_link {
   margin-left: auto;
+  margin-top: 20px!important;
 }
 .footer_link a {
   margin-right: 14px;

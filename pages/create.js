@@ -12,6 +12,7 @@ import {
 } from "../lib/basvuru";
 import Link from "next/link";
 import slugify from "slugify";
+import Layout from "../components/Layout";
 export default function () {
   const [steps, setSteps] = useState([
     {
@@ -66,10 +67,6 @@ export default function () {
   }, []);
 
   useEffect(() => {
-    console.log(file)
-  }, [file])
-
-  useEffect(() => {
     const satir = firmaAciklama.split("\n");
     const new_data = [];
     for (let i = 0; i < satir.length; i++) {
@@ -110,7 +107,6 @@ export default function () {
   };
 
   const handleOnayla = async () => {
-    console.log(file)
     if (
       name === "" ||
       firmaAciklama === "" ||
@@ -119,7 +115,7 @@ export default function () {
       sehir === "default" ||
       web === "" ||
       mail === "",
-      file[0].type !== 'image/png'
+      file[0]?.type !== 'image/png'
     ) {
       setSteps((prevState) => {
         prevState[0].validate = true;
@@ -194,20 +190,12 @@ export default function () {
   };
 
   return (
-    <div className="container">
+    <Layout>
       <div
-        className={`create_area ${
+        className={`create_area container ${
           steps[steps.length - 1].active ? "full_width" : ""
         }`}
       >
-        <header>
-          <Logotext />
-          <p>
-            Ücretsiz ilan vererek milyonlara kolayca
-            ulaşabilir ve kalifiyeli elemanını hızlıca
-            bulabilirsiniz
-          </p>
-        </header>
         {success ? (
           <div className="success_ilan">
             <div className="align_center">
@@ -281,6 +269,6 @@ export default function () {
           </>
         )}
       </div>
-    </div>
+    </Layout>
   );
 }
