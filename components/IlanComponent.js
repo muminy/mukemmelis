@@ -17,7 +17,7 @@ export default function ({
       <div className="is_ara padd_v">
         <div className="container">
           <div className="header_article">
-            <header>{is_baslik}</header>
+            <header className="h123456">{is_baslik}</header>
             <div className="is_tipi">
               <div className="name">{firma_ad}</div>
             </div>
@@ -31,7 +31,7 @@ export default function ({
               {is_aciklama.map((item, index) => (
                 <p key={index}>{item}</p>
               ))}
-              <h3>Aranan Nitelikler ve Yetenekler</h3>
+              <h3 className="h123456">Aranan Nitelikler ve Yetenekler</h3>
               <div className="nitelikler">
                 {is_nitelik.map((item, index) => (
                   <div key={index} className="nitelik">
@@ -39,7 +39,7 @@ export default function ({
                   </div>
                 ))}
               </div>
-              <h3>Çalışma Şartları</h3>
+              <h3 className="h123456">Çalışma Şartları</h3>
               <div className="nitelikler">
                 {is_sart.map((item, index) => (
                   <div key={index} className="nitelik">
@@ -53,7 +53,7 @@ export default function ({
             <div className="is_detay">
               <header>
                 <div className="firma_card">
-                  <div className="firmaAd">{firma_ad}</div>
+                  <div className="firmaAd h123456">{firma_ad}</div>
                   <div className="firma_yer">{sehir}</div>
                 </div>
                 <a
@@ -65,18 +65,18 @@ export default function ({
               </header>
               <div className="firma_sayilar">
                 <div className="group">
-                  <h3>Deneyim</h3>
+                  <div className="div_h3 h123456">Deneyim</div>
                   <div className="value_group">
                     {deneyim}
                   </div>
                 </div>
                 <div className="group">
-                  <h3>Çalışma tipi</h3>
+                  <div className="div_h3 h123456">Çalışa Tipi</div>
                   <div className="value_group">{tip}</div>
                 </div>
               </div>
               <div className="firma_aciklama">
-                <h3>Firma</h3>
+                <h3 className="h123456">Firma</h3>
                 {firma_aciklama.map((item, index) => (
                   <p key={index}>{item}</p>
                 ))}

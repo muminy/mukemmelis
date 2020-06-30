@@ -59,14 +59,6 @@ class MyDocument extends Document {
             content="default"
           />
           <link rel="manifest" href="/manifest.json"></link>
-          <meta
-            name="apple-mobile-web-app-title"
-            content="mukemmelis"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <Main />

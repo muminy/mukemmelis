@@ -33,14 +33,14 @@ export default function () {
         >
           <div className="menu_list">
             <Link href="/isbul">
-              <a className="menu_a">Find job</a>
+              <a className="menu_a h123456">Find job</a>
             </Link>
             <Link href="/update">
-              <a className="menu_a">Updates</a>
+              <a className="menu_a h123456">Updates</a>
             </Link>
           </div>
           <Link href="/create">
-            <a className="sirket">Create Job</a>
+            <a className="sirket h123456">Create Job</a>
           </Link>
         </div>
       </div>
@@ -70,7 +70,7 @@ export function AdminHeader() {
         >
           <div className="menu_list">
             <Link href="/admin/ilanlar">
-              <a className="menu_a">İlanlar</a>
+              <a className="menu_a h123456">İlanlar</a>
             </Link>
           </div>
         </div>

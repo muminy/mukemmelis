@@ -1,3 +1,10 @@
+@media only screen and (max-width: 1300px) {
+  .media_area {
+    height: unset;
+    padding: 120px 0px;
+  }
+}
+
 @media only screen and (max-width: 1000px) {
   .resp_btn {
     display: block;
@@ -8,6 +15,13 @@
   }
   .show {
     text-align: center;
+  }
+  .media_area {
+    height: unset;
+    padding: 60px 0px;
+  }
+  .is_tags {
+    width: 100%;
   }
   .md_items {
     text-align: center;
@@ -27,14 +41,12 @@
   .menu_list .menu_a {
     display: block;
     margin-left: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     margin-top: 5px;
     text-align: center;
     font-weight: 900;
-    font-size: 30px;
-  }
-  .menu_list .menu_a:last-child {
-    margin-bottom: 15px;
+    font-size: 34px;
+    font-family: FontEB, sans-serif;
   }
   .sirket {
     margin-left: 0px;
@@ -43,6 +55,7 @@
     font-weight: 900;
     width: 100%;
     text-align: center;
+    font-family: FontEB, sans-serif;
   }
   .find_job_landing {
     display: block;
@@ -130,12 +143,36 @@
     text-align: center;
     padding: 5px 20px !important;
   }
+  .mtop {
+    margin-bottom: 30px;
+  }
+  .d-none{
+    display: none;
+  }
+  .footer_links {
+    text-align: center;
+    margin-bottom: 23px;
+  }
+  .f_link {
+    display: block;
+  }
+  .play_btn {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .play_btn:last-child {
+    margin-left: 10px;
+  }
+  .play_btn:first-child {
+    margin-right: 10px;
+  }
 }
 
 @media only screen and (max-width: 700px) {
   .menu_list .menu_a:last-child {
     margin-bottom: 20px;
   }
+  
   .menu_list {
     text-align: center;
   }
@@ -143,5 +180,21 @@
     padding: 15px 60px;
     margin-top: 10px;
     font-size: 25px;
+  }
+  .div_h4 {
+    font-size: 38px!important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  
+  .google_play {
+    display: block;
+  }
+  .mtop {
+    margin-bottom: 0px;
+  }
+  .play_btn {
+    margin: 0px!important;
+    margin-bottom: 10px!important ;
   }
 }

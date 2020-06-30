@@ -19,8 +19,8 @@ export default function () {
             x2="0%"
             y2="100%"
           >
-            <stop offset="0%" className="stop_1"></stop>
-            <stop offset="100%" className="stop_2"></stop>
+            <stop offset="0%" stopColor="#3423ca"></stop>
+            <stop offset="100%" stopColor="#3423ca"></stop>
           </linearGradient>
         </defs>
         <path

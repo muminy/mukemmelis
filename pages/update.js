@@ -6,7 +6,7 @@ export default function () {
       <div className="h_ii">
         <div className="container">
           <div className="upg_header">
-            <header className="upt_hdr">
+            <header className="upt_hdr h123456">
               Mükemmelis.com Güncellemeleri
             </header>
             <div className="is_tipi">
@@ -24,7 +24,7 @@ export default function () {
             <time>
               Friday, May 1st 2020 (about 2 months ago)
             </time>
-            <header>Protecting Deployments</header>
+            <header className="h123456">Protecting Deployments</header>
             <div className="content">
               <p>
                 Pushing a change to your project results in
@@ -43,7 +43,7 @@ export default function () {
             </div>
           </div>
           <div className="added">
-              <header>Değişiklikler</header>
+              <header className="h123456">Değişiklikler</header>
               <div className="degisiklik_list">
                   <div className="added_list">Konuma göre arama eklendi</div>
                   <div className="added_list">Maaşa göre arama eklendi</div>
@@ -58,7 +58,7 @@ export default function () {
             <time>
               Friday, May 1st 2020 (about 2 months ago)
             </time>
-            <header>Protecting Deployments</header>
+            <header className="h123456">Protecting Deployments</header>
             <div className="content">
               <p>
                 Pushing a change to your project results in
@@ -77,7 +77,7 @@ export default function () {
             </div>
           </div>
           <div className="added">
-              <header>Değişiklikler</header>
+              <header className="h123456">Değişiklikler</header>
               <div className="degisiklik_list">
                   <div className="added_list">Konuma göre arama eklendi</div>
                   <div className="added_list">Maaşa göre arama eklendi</div>

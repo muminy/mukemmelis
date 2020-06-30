@@ -56,7 +56,7 @@ export default function ({
               </div>
             </div>
             <div className="group">
-              <h3>Çalışma tipi</h3>
+              <h3 className="h123456">Çalışma tipi</h3>
               <div className="value_group">
                 {istene_tip === 'default' ? 'Belirlenmedi' : istene_tip}
               </div>

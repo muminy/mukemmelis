@@ -52,11 +52,11 @@ export default function () {
     <Layout admin>
       <div className="container">
         <header className="admin_yeni_ilan">
-          <div>Yeni ilanlar</div>
+          <div className="h123456">Yeni ilanlar</div>
           <p>Toplam 18 yeni ilan</p>
         </header>
-        {ilans.length ? (
-          ilans.map((item, index) => (
+        {inactive.length ? (
+          inactive.map((item, index) => (
             <IlanCard
               key={index}
               {...item}
@@ -68,15 +68,15 @@ export default function () {
           <Loader />
         ) : (
           <div className="not_found_src_data">
-            Aktif ilan bulunamadı
+            Yeni bir ilan yok
           </div>
         )}
         <header className="admin_yeni_ilan">
-          <div>Aktif ilanlar</div>
+          <div className="h123456">Aktif ilanlar</div>
           <p>Toplam 18 yeni ilan</p>
         </header>
-        {inactive.length ? (
-          inactive.map((item, index) => (
+        {ilans.length ? (
+          ilans.map((item, index) => (
             <IlanCard
               key={index}
               {...item}
@@ -88,7 +88,7 @@ export default function () {
           <Loader />
         ) : (
           <div className="not_found_src_data">
-            İnactive ilan yok
+            Aktif ilan yok
           </div>
         )}
       </div>
