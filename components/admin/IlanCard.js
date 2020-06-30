@@ -45,7 +45,7 @@ export default function ({
           </button>
         )}
         <button
-          onClick={() => active  ? deactive(docs) : deleteIlan(docs)}
+          onClick={() => active ? deactive(docs) : deleteIlan(docs)}
           className="r_btn_ilan"
         >
           {active ? 'İnactive' : 'Sil'}

@@ -16,7 +16,7 @@ import {
 
 export default function () {
   const [inactive, setInActive] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [ilans, setIlanActive] = useState([]);
 
   useEffect(() => {
@@ -24,28 +24,28 @@ export default function () {
   }, []);
 
   const setIlans = () => {
-    setLoading(true);
     fetch(`${api}/ilan/inactive`)
-      .then((responseJson) => responseJson.json())
-      .then((responseJson) => setInActive(responseJson))
-      .then(() => setLoading(false));
-
-    fetch(`${api}/ilan/get`)
-      .then((responseJson) => responseJson.json())
-      .then((responseJson) => setIlanActive(responseJson))
+      .then(responseJson => responseJson.json())
+      .then((responseJson) => {
+        setIlanActive(responseJson.filter(item => item.active));
+        setInActive(responseJson.filter(item => !item.active));
+      })
       .then(() => setLoading(false));
   };
 
   const setActive = (id) => {
-    updateData(id, true).then(() => setIlans());
+    updateData(id, true)
+    .then(() => setIlans())
   };
 
   const setDActive = (id) => {
-    updateData(id, false).then(() => setIlans());
+    updateData(id, false)
+    .then(() => setIlans())
   };
 
   const deleteIlan = (id) => {
-    deleteCollection(id).then(() => setIlans());
+    deleteCollection(id)
+    .then(() => setIlans())
   };
 
   return (
