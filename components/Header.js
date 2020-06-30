@@ -1,5 +1,6 @@
 import Logotext from "./Logotext";
 import Link from "next/link";
+import { useState } from "react";
 
 const MenuIconLines = () => {
   return (
@@ -12,6 +13,7 @@ const MenuIconLines = () => {
 };
 
 export default function () {
+  const [show, setShow] = useState(false)
   return (
     <nav className={`navbar navbar-expand-lg navbar-light`}>
       <div className="container">
@@ -19,16 +21,12 @@ export default function () {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={() => setShow(!show)}
         >
           <MenuIconLines />
         </button>
         <div
-          className="collapse navbar-collapse"
+          className={`collapse navbar-collapse ${show ? 'show' : ''}`}
           id="navbarSupportedContent"
         >
           <div className="menu_list">
@@ -49,6 +47,7 @@ export default function () {
 }
 
 export function AdminHeader() {
+  const [show, setShow] = useState(false)
   return (
     <nav className={`navbar navbar-expand-lg navbar-light`}>
       <div className="container">
@@ -56,16 +55,12 @@ export function AdminHeader() {
         <button
           className="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={() => setShow(!show)}
         >
           <MenuIconLines />
         </button>
         <div
-          className="collapse navbar-collapse"
+          className={`collapse navbar-collapse ${show ? 'show' : ''}`}
           id="navbarSupportedContent"
         >
           <div className="menu_list">
