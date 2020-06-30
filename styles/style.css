@@ -1,20 +1,22 @@
 input:focus {
-  outline: 0;
+  outline: none;
 }
 textarea:focus {
-  outline: 0;
+  outline: none;
 }
 button:focus {
-  outline: 0;
+  outline: none;
 }
 select:focus {
-  outline: 0;
+  outline: none;
 }
+
 .header {
-  padding: 15px 0;
+  padding: 15px 0px;
   display: flex;
   align-items: center;
 }
+
 .logo_text {
   font-size: 20px;
   text-decoration: none;
@@ -25,9 +27,11 @@ select:focus {
   display: flex;
   line-height: 20px;
 }
+
 .menu_list {
   margin-left: auto;
 }
+
 .menu_list .menu_a {
   text-decoration: none;
   font-weight: 700;
@@ -49,6 +53,7 @@ select:focus {
   font-size: 14px;
   display: block;
 }
+
 .sirket:hover {
   color: #fff;
   background-color: #6163ff;
@@ -56,49 +61,54 @@ select:focus {
 .menu_responsive {
   display: contents;
 }
+
 .navbar {
-  padding: 15px 0 !important;
+  padding: 15px 0px !important;
 }
 .resp_btn {
   background-color: transparent;
-  border: 0;
+  border: 0px;
   display: none;
-  outline: 0;
+  outline: none;
   cursor: pointer;
 }
 button:focus {
-  outline: 0;
+  outline: none;
 }
+
 .is_ara {
-  padding: 20px 0;
+  padding: 20px 0px;
   background-color: #f1f4f8;
 }
 .h_ii {
-  padding: 20px 0;
+  padding: 20px 0px;
   background-color: #f1f4f8;
 }
+
 .arama_alani {
   display: flex;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 20px;
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.123);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.123);
 }
 .sehir_response {
   display: none;
 }
+
 .arama_alani .search_area {
   background-color: #fff;
-  padding: 0 20px;
+  padding: 0px 20px;
   display: flex;
   align-items: center;
-  padding-right: 0;
+  padding-right: 0px;
   width: 100%;
 }
+
 .arama_alani .search_area .user_search_input {
-  border: 0;
+  border: 0px;
   padding: 15px 15px;
-  outline: 0;
+  outline: none;
   width: 100%;
 }
 .arama_alani .bolge_area {
@@ -108,20 +118,21 @@ button:focus {
   min-width: 20%;
 }
 .arama_alani .bolge_area select {
-  border: 0;
-  padding: 0 20px;
-  outline: 0;
+  border: 0px;
+  padding: 0px 20px;
+  outline: none;
   width: 100%;
 }
 .arama_alani .ara_btn {
-  border: 0;
+  border: 0px;
   background-color: #fff;
-  padding: 0 20px;
+  padding: 0px 20px;
   cursor: pointer;
 }
 .arama_alani .ara_btn:focus {
-  outline: 0;
+  outline: none;
 }
+
 .arama_alani .ara_btn {
   background-color: #eee;
   color: #111;
@@ -148,16 +159,18 @@ button:focus {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+
 .filter_src select {
   width: 100%;
-  border: 0;
+  border: 0px;
   background-color: #fff;
-  padding: 10px 0;
+  padding: 10px 0px;
   padding-left: 15px;
-  outline: 0;
+  outline: none;
   border: 1px solid #eee;
   border-radius: 3px;
 }
+
 .slc_area {
   display: flex;
   background-color: #fff;
@@ -167,21 +180,25 @@ button:focus {
   overflow: hidden;
   border: 1px solid #eee;
 }
+
 .sil_all {
   margin-top: auto;
   height: 100%;
 }
+
 .sil_all button {
   margin-top: auto;
 }
+
 .tum_isler {
-  padding: 20px 0;
-  padding-bottom: 0;
+  padding: 20px 0px;
+  padding-bottom: 0px;
 }
 .tum_isler header {
   font-size: 15px;
-  font-weight: 700;
+  font-weight: bold;
 }
+
 .is_ilan_card {
   border-left: 1px solid #111;
   border-bottom: 3px solid #111;
@@ -203,6 +220,7 @@ button:focus {
   margin-right: 10px;
   border-radius: 10px;
 }
+
 .is_ilan_card:hover {
   border-left: 1px solid #0026ff;
   border-bottom: 3px solid #0026ff;
@@ -210,20 +228,24 @@ button:focus {
   border-top: 1px solid #0026ff;
   color: #000;
 }
+
 .is_ilan_card header .yer {
   font-size: 12px;
   font-weight: 300;
 }
+
 .is_ilan_card header h3 {
   font-weight: 800;
   font-size: 16px;
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
+
 .is_ilan_card header .is_tipi img {
   width: 15px;
   height: 15px;
 }
+
 .is_ilan_card header .is_tipi {
   font-size: 13px;
   font-weight: 500;
@@ -244,22 +266,26 @@ button:focus {
   font-size: 13px;
   margin-bottom: 5px;
 }
+
 .is_ilan_card .basvur_btn_card {
   width: 100%;
   background-color: #fff;
   color: #111;
   border: 1px solid #ddd;
-  padding: 5px 0;
+  padding: 5px 0px;
   border-radius: 5px;
 }
+
 .is_ilan_card .basvur_btn_card:hover {
   background-color: #eee;
-  border: 1px solid #c5c5c5;
+  border: 1px solid rgb(197, 197, 197);
 }
+
 .header_article header {
   font-size: 19px;
   font-weight: 700;
 }
+
 .header_article .is_tipi {
   display: flex;
   align-items: center;
@@ -270,12 +296,12 @@ button:focus {
   margin-right: 10px;
 }
 .firma_istek {
-  padding: 40px 0;
+  padding: 40px 0px;
 }
 .firma_istek p {
   font-size: 15px;
   line-height: 22px;
-  margin-top: 0;
+  margin-top: 0px;
 }
 div.firma_istek p:last-child {
   margin-bottom: 38px;
@@ -284,6 +310,7 @@ div.firma_istek p:last-child {
   font-weight: 700;
   font-size: 16px;
 }
+
 .nitelikler {
   margin-bottom: 38px;
 }
@@ -291,8 +318,9 @@ div.firma_istek p:last-child {
   content: "*";
   margin-right: 10px;
 }
+
 .padd_v {
-  padding: 40px 0;
+  padding: 40px 0px;
 }
 .is_detay {
   padding: 20px;
@@ -315,17 +343,20 @@ div.firma_istek p:last-child {
   font-weight: 800;
   line-height: 25px;
 }
+
 .firma_card .firma_yer {
   font-size: 14px;
 }
+
 .firma_sayilar {
   display: flex;
   margin-bottom: 18px;
 }
+
 .group h3 {
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 0;
+  margin-bottom: 0px;
 }
 .group {
   width: 50%;
@@ -333,22 +364,25 @@ div.firma_istek p:last-child {
 .group .value_group {
   font-size: 15px;
 }
+
 .firma_aciklama h3 {
   font-size: 16px;
   font-weight: 600;
 }
+
 .firma_aciklama p {
   font-size: 15px;
 }
+
 .basvur_big {
-  border-width: 0;
+  border-width: 0px;
   background-color: #213ee4;
   width: 100%;
   color: #f1f4f8;
   border-radius: 5px;
   display: block;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 0px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -356,9 +390,10 @@ div.firma_istek p:last-child {
   background-color: #324cdf;
   color: #fff;
 }
+
 .find_job_landing {
   display: flex;
-  padding: 30px 0;
+  padding: 30px 0px;
   align-items: center;
 }
 .find_job_landing .aciklama {
@@ -383,24 +418,27 @@ div.firma_istek p:last-child {
   width: 100%;
 }
 .home_page {
-  padding: 50px 0;
+  padding: 50px 0px;
 }
 .home_page > header {
   font-size: 22px;
   font-weight: 900;
   margin-bottom: 20px;
 }
+
 .footer {
-  padding: 15px 0;
+  padding: 15px 0px;
   display: flex;
   align-items: center;
 }
+
 .footer_bg {
   padding-top: 60px;
 }
+
 .footer_link {
   margin-left: auto;
-  margin-top: 20px !important;
+  margin-top: 20px!important;
 }
 .footer_link a {
   margin-right: 14px;
@@ -428,31 +466,38 @@ div.firma_istek p:last-child {
   width: 70%;
   margin-right: 20px;
 }
+
 .upg_header header {
   font-size: 26px;
   font-weight: 900;
 }
+
 .update header {
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 18px;
 }
+
 .upg_header {
-  padding: 20px 0;
+  padding: 20px 0px;
 }
+
 .update time {
   font-size: 14px;
 }
+
 .update .content {
   width: 100%;
   margin-right: 20px;
 }
+
 .flex {
   display: flex;
   margin-bottom: 28px;
-  padding: 25px 0;
-  padding-bottom: 0;
+  padding: 25px 0px;
+  padding-bottom: 0px;
 }
+
 .added {
   width: 30%;
   margin-left: 20px;
@@ -465,11 +510,13 @@ div.firma_istek p:last-child {
   border-radius: 5px;
   display: inline-table;
 }
+
 .added > header {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 15px;
 }
+
 .degisiklik_list {
   color: #111;
 }
@@ -485,34 +532,37 @@ div.firma_istek p:last-child {
   margin-bottom: 50px;
 }
 .create_area > header {
-  padding: 30px 0;
+  padding: 30px 0px;
 }
 .create_area > header > .logo_text {
   text-align: center;
   display: block;
   font-size: 30px;
   margin-bottom: 10px;
-  padding-bottom: 0;
+  padding-bottom: 0px;
 }
 .create_area header > p {
   text-align: center;
   margin: 0 auto;
 }
+
 .steps {
   text-align: center;
   display: flex;
-  padding: 30px 0;
+  padding: 30px 0px;
   justify-content: center;
 }
 .steps > .step {
   display: flex;
   align-items: center;
 }
+
 .steps > .step > .info_step {
   margin-left: 10px;
   display: flex;
   align-items: center;
 }
+
 .steps > .step .step_number {
   width: 45px;
   height: 45px;
@@ -530,6 +580,7 @@ div.firma_istek p:last-child {
   background-color: #4b21e4;
   color: #fff;
 }
+
 .steps > .step:not(:last-child) > .info_step::after {
   content: "";
   width: 40px;
@@ -550,11 +601,12 @@ div.firma_istek p:last-child {
   margin-bottom: 6px;
 }
 .create_form {
-  padding: 30px 0;
+  padding: 30px 0px;
 }
 .create_form > .form_group > header {
   font-weight: 700;
 }
+
 .create_form .form_group > input {
   width: 100%;
   border: 2px solid #04061323;
@@ -564,6 +616,7 @@ div.firma_istek p:last-child {
 .create_form > .form_group > input:focus {
   border: 2px solid #213ee4;
 }
+
 .create_form .form_group > textarea {
   width: 100%;
   border: 2px solid #04061323;
@@ -582,18 +635,22 @@ div.firma_istek p:last-child {
 .create_form > .form_group > select:focus {
   border: 2px solid #213ee4;
 }
+
 .footer_content {
   display: flex;
 }
+
 .footer_content > .sol_sag {
   margin-left: auto;
 }
+
 .footer_content > .sol_sag > button {
   padding: 5px 40px;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: 700;
+  font-weight: bold;
 }
+
 .footer_content > .sol_sag > button:first-child {
   background-color: #213ee4;
   border: 2px solid #213ee4;
@@ -606,6 +663,7 @@ div.firma_istek p:last-child {
   color: #213ee4;
   margin-left: 10px;
 }
+
 .niteliks {
   margin-bottom: 10px;
 }
@@ -614,10 +672,10 @@ div.firma_istek p:last-child {
 }
 .group_datas button {
   border: 2px solid #04061323;
-  padding: 0 0;
+  padding: 0px 0px;
   border-radius: 5px;
   margin-left: 10px;
-  padding: 0 20px;
+  padding: 0px 20px;
   height: 50px;
   background-color: transparent;
 }
@@ -634,10 +692,10 @@ div.firma_istek p:last-child {
 .nitelik_list button {
   height: 30px;
   border: 2px solid #04061323;
-  padding: 0 0;
+  padding: 0px 0px;
   border-radius: 5px;
   margin-left: 10px;
-  padding: 0 20px;
+  padding: 0px 20px;
   background-color: transparent;
   margin-left: auto;
 }
@@ -652,12 +710,15 @@ div.firma_istek p:last-child {
 .footer_content {
   margin-top: 20px;
 }
+
 .OnaylaBtn {
   padding: 5px 90px !important;
 }
+
 .full_width {
   width: 100% !important;
 }
+
 .error_001 {
   text-align: center;
   margin-bottom: 20px;
@@ -665,6 +726,7 @@ div.firma_istek p:last-child {
   color: #e4214b;
   padding: 10px;
 }
+
 .basarili_kayit {
   text-align: center;
   margin-bottom: 20px;
@@ -675,6 +737,7 @@ div.firma_istek p:last-child {
   width: 50%;
   margin: 0 auto;
 }
+
 .success_ilan {
   display: flex;
   height: calc(100vh - 300px);
@@ -688,9 +751,9 @@ div.firma_istek p:last-child {
 .ilana_git {
   text-align: center;
   color: #fff;
-  background-color: #000;
-  border: 1px solid #000;
-  padding: 10px 0;
+  background-color: #000000;
+  border: 1px solid #000000;
+  padding: 10px 0px;
   width: 240px;
   margin: 0 auto;
   border-radius: 5px;
@@ -699,8 +762,9 @@ div.firma_istek p:last-child {
   margin-top: 10px;
 }
 .ilana_git:hover {
-  background-color: #111;
+  background-color: #111111;
 }
+
 .right_aciklama {
   text-align: right;
 }
@@ -713,20 +777,23 @@ div.firma_istek p:last-child {
   margin-left: auto;
   text-align: center;
 }
+
 .loader_width {
   width: 200px;
   height: 200px;
   position: relative;
-  margin: 120px 0;
+  margin: 120px 0px;
   display: flex;
   align-items: center;
   margin: 120px auto;
 }
+
 .item {
   width: 100px;
   height: 100px;
   position: absolute;
 }
+
 .item-1 {
   background-color: #fa5667;
   top: 0;
@@ -735,6 +802,7 @@ div.firma_istek p:last-child {
   animation: item-1_move 1.8s
     cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
 }
+
 .item-2 {
   background-color: #7a45e5;
   top: 0;
@@ -742,6 +810,7 @@ div.firma_istek p:last-child {
   animation: item-2_move 1.8s
     cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
 }
+
 .item-3 {
   background-color: #1b91f7;
   bottom: 0;
@@ -750,6 +819,7 @@ div.firma_istek p:last-child {
   animation: item-3_move 1.8s
     cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
 }
+
 .item-4 {
   background-color: #fac24c;
   bottom: 0;
@@ -757,6 +827,7 @@ div.firma_istek p:last-child {
   animation: item-4_move 1.8s
     cubic-bezier(0.6, 0.01, 0.4, 1) infinite;
 }
+
 @keyframes item-1_move {
   0%,
   100% {
@@ -772,6 +843,7 @@ div.firma_istek p:last-child {
     transform: translate(100px, 0);
   }
 }
+
 @keyframes item-2_move {
   0%,
   100% {
@@ -787,6 +859,7 @@ div.firma_istek p:last-child {
     transform: translate(0, 100px);
   }
 }
+
 @keyframes item-3_move {
   0%,
   100% {
@@ -802,6 +875,7 @@ div.firma_istek p:last-child {
     transform: translate(-100px, 0);
   }
 }
+
 @keyframes item-4_move {
   0%,
   100% {
@@ -817,10 +891,12 @@ div.firma_istek p:last-child {
     transform: translate(0, -100px);
   }
 }
+
 .tags_src {
   display: flex;
   flex-wrap: wrap;
 }
+
 .tags_src > .tag_src {
   padding: 5px 10px;
   padding-left: 25px;
@@ -831,27 +907,31 @@ div.firma_istek p:last-child {
   align-items: center;
   margin-bottom: 15px;
 }
+
 .not_search {
   margin-bottom: 15px;
 }
+
 .tag_src > button {
-  padding: 0;
+  padding: 0px;
   background-color: transparent;
-  border-width: 0;
+  border-width: 0px;
   line-height: 10px;
   margin-left: 10px;
   cursor: pointer;
 }
 .tag_src > button:focus {
-  outline: 0;
+  outline: none;
 }
+
 .not_found_src_data {
   text-align: center;
   background-color: rgba(165, 42, 42, 0.062);
   color: brown;
-  padding: 10px 0;
-  font-weight: 700;
+  padding: 10px 0px;
+  font-weight: bold;
 }
+
 .ilan_a_card {
   display: block;
   border-left: 1px solid #eee;
@@ -863,16 +943,19 @@ div.firma_istek p:last-child {
   margin-bottom: 20px;
   color: unset;
 }
+
 .ilan_a_card:hover {
-  border-left: 1px solid #ddd;
-  border-bottom: 3px solid #ddd;
-  border-right: 3px solid #ddd;
-  border-top: 1px solid #ddd;
+  border-left: 1px solid #dddddd;
+  border-bottom: 3px solid #dddddd;
+  border-right: 3px solid #dddddd;
+  border-top: 1px solid #dddddd;
   color: unset;
 }
+
 .firma_infos {
   display: flex;
 }
+
 .header_ilan {
   display: flex;
   align-items: center;
@@ -880,6 +963,7 @@ div.firma_istek p:last-child {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
+
 .header_ilan > img {
   width: 40px;
   height: 40px;
@@ -889,17 +973,19 @@ div.firma_istek p:last-child {
   padding: 5px;
 }
 .header_ilan > header > h3 {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin-bottom: 0px;
+  margin-top: 0px;
   line-height: 18px;
   font-weight: 800;
   font-size: 18px;
 }
+
 .header_ilan > header > .firma_adi {
   font-size: 14px;
   font-weight: 300;
   line-height: 18px;
 }
+
 .firma_infos {
   padding: 10px;
 }
@@ -918,16 +1004,22 @@ div.firma_istek p:last-child {
   color: #000;
   line-height: 18px;
 }
+
 .admin_yeni_ilan {
   font-weight: 800;
   font-size: 18px;
-  padding: 30px 0;
+  padding: 30px 0px;
   padding-bottom: 10px;
 }
+
 .admin_yeni_ilan > p {
   font-weight: 500;
   font-size: 14px;
-  margin-top: 0;
+  margin-top: 0px;
+}
+.ml_mr {
+  margin-left: 0px!important;
+  margin-right:  0px!important;;
 }
 .ilan_details {
   font-weight: 600;
@@ -938,13 +1030,16 @@ div.firma_istek p:last-child {
   padding: 5px;
   align-items: center;
   margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .ilan_details > .islemx {
   display: flex;
 }
+
 .i_btn_ilan {
-  padding: 0;
-  border: 0;
+  padding: 0px;
+  border: 0px;
   border-radius: 3px;
   background-color: #f3f0ea;
   color: #b87811;
@@ -959,8 +1054,8 @@ div.firma_istek p:last-child {
   background-color: #eee4d1;
 }
 .s_btn_ilan {
-  padding: 0;
-  border: 0;
+  padding: 0px;
+  border: 0px;
   border-radius: 3px;
   background-color: #eaf3ee;
   color: #228b52;
@@ -973,9 +1068,10 @@ div.firma_istek p:last-child {
 .s_btn_ilan:hover {
   background-color: #a8ebc6;
 }
+
 .r_btn_ilan {
-  padding: 0;
-  border: 0;
+  padding: 0px;
+  border: 0px;
   border-radius: 3px;
   background-color: #f3eaea;
   color: #8b2622;
@@ -986,9 +1082,9 @@ div.firma_istek p:last-child {
   width: 50%;
 }
 .ucN {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  overflow: hidden; /* taşanları gizle */
+  white-space: nowrap; /* alt satıra hiç inme */
+  text-overflow: ellipsis; /* eğer uzunsa üç nokta koy */
 }
 .r_btn_ilan:hover {
   background-color: #eebebe;
@@ -1018,8 +1114,9 @@ div.firma_istek p:last-child {
 .light_logo:hover > defs > linearGradient > .stop_2 {
   stop-color: #904e95 !important;
 }
-.dark_icon,
-.menu_icon {
+
+.menu_icon,
+.dark_icon {
   width: 35px;
   height: 19px;
   cursor: pointer;
@@ -1043,19 +1140,20 @@ div.firma_istek p:last-child {
 .menu_icon > .line_3 {
   width: 50%;
   height: 3px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
   border-radius: 4px;
   background-color: #111;
 }
 .navbar-light .navbar-toggler {
-  padding: 0;
-  border-width: 0;
+  padding: 0px;
+  border-width: 0px;
 }
 .navbar-toggler:focus {
   text-decoration: none;
-  outline: 0;
+  outline: none;
   box-shadow: unset !important;
 }
+
 svg:hover > defs > linearGradient > stop.stop_1 {
   stop-color: #e96443;
 }
@@ -1064,21 +1162,4 @@ svg:hover {
 }
 svg:hover > defs > linearGradient > stop.stop_2 {
   stop-color: #904e95;
-}
-
-.fade:not(.show) {
-  opacity: 0
-}
-
-.collapse:not(.show) {
-  display: none
-}
-.navbar-toggler {
-  padding: 0.25rem 0.75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  transition: box-shadow 0.15s ease-in-out;
 }

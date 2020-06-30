@@ -17,7 +17,7 @@ export default function ({
   deactive
 }) {
   return (
-    <div className="row ilan_details">
+    <div className="row ilan_details ml_mr">
       <div className="col-lg-3 col-md-6 md_items col-sm-6 ucN">{is_baslik}</div>
       <div className="col-lg-2 col-md-6 md_items col-sm-6 br_0">{firma_ad}</div>
       <div className="col-lg-1 col-md-3 col-sm-3 md_items">
