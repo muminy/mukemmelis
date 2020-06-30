@@ -9,7 +9,7 @@ export default function () {
           <div className="col-lg-2 d-none">
             <Logotext />
           </div>
-          <div className="col-lg-2 col-md-6 col-sm-6">
+          <div className="col-lg-2 col-md-6 col-sm-6 col-6_xxs">
             <div className="footer_links">
               <h3 className="h123456">Şirket</h3>
               <div className="links">
@@ -25,7 +25,7 @@ export default function () {
               </div>
             </div>
           </div>
-          <div className="col-lg-2 col-md-6 col-sm-6">
+          <div className="col-lg-2 col-md-6 col-sm-6 col-6_xxs">
             <div className="footer_links">
               <h3 className="h123456">İletişim</h3>
               <div className="links">

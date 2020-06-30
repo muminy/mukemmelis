@@ -18,7 +18,7 @@
   }
   .media_area {
     height: unset;
-    padding: 60px 0px;
+    padding: 40px 20px;
   }
   .is_tags {
     width: 100%;
@@ -152,6 +152,7 @@
   .footer_links {
     text-align: center;
     margin-bottom: 23px;
+    padding-top: 0px;
   }
   .f_link {
     display: block;
@@ -172,9 +173,11 @@
   .menu_list .menu_a:last-child {
     margin-bottom: 20px;
   }
-  
   .menu_list {
     text-align: center;
+  }
+  .is_ara_dev > .arama_a > button {
+    width: 20%;
   }
   .sirket {
     padding: 15px 60px;
@@ -184,9 +187,14 @@
   .div_h4 {
     font-size: 38px!important;
   }
+  .col-6_xxs {
+    width: 50%!important;
+  }
 }
 @media only screen and (max-width: 500px) {
-  
+  .div_h4 {
+    font-size: 32px!important;
+  }
   .google_play {
     display: block;
   }
