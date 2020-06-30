@@ -14,6 +14,7 @@ export default function () {
         }),
       ),
     );
+    console.log(process.env.DB_AD)
   }, []);
 
   return (
@@ -32,7 +33,7 @@ export default function () {
             </p>
           </div>
           <div className="aciklama_image">
-            <img src="/svg/findjob.svg" />
+            <img loading="lazy" alt="findjob" src="/svg/findjob.svg" />
           </div>
         </div>
         {ilan.length ? (
@@ -68,7 +69,7 @@ export default function () {
         )}
         <div className="find_job_landing rvs">
           <div className="aciklama_image">
-            <img src="/svg/ilanver.svg" />
+            <img loading="lazy" alt="ilan_ver" src="/svg/ilanver.svg" />
           </div>
           <div className="aciklama right_aciklama">
             <h3>Mükemmel İlan verin</h3>
