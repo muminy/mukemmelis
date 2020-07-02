@@ -1,10 +1,4 @@
 import Layout from "../../components/Layout";
-import {
-  CheckIcon,
-  DeleteIcon,
-  InfoIcon,
-} from "../../constant/iconsvg";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { api } from "../../constant/api";
 import IlanCard from "../../components/admin/IlanCard";
@@ -62,6 +56,7 @@ export default function () {
               {...item}
               activeIlan={setActive}
               deactive={setDActive}
+              deleteIlan={deleteIlan}
             />
           ))
         ) : loading ? (
@@ -81,7 +76,7 @@ export default function () {
               key={index}
               {...item}
               activeIlan={setActive}
-              deleteIlan={deleteIlan}
+              deactive={setDActive}
             />
           ))
         ) : loading ? (

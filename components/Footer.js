@@ -53,7 +53,6 @@ export default function () {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  class="w-6 h-6"
                   width={25}
                   height={25}
                   viewBox="0 0 512 512"
@@ -69,7 +68,6 @@ export default function () {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  class="w-6 h-6"
                   width={25}
                   height={25}
                   viewBox="0 0 305 305"

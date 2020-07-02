@@ -4,9 +4,11 @@ import IlanCard from "../components/IlanCard";
 import { useState, useEffect } from "react";
 import { DeleteIcon } from "../constant/iconsvg";
 import fetch from "node-fetch";
-import { api } from '../constant/api'
+import { api } from "../constant/api";
 import Loader from "../components/Loader";
-export default function Home() {
+import { useRouter } from "next/router";
+
+export default function Home({ qData }) {
   const [tip, setTip] = useState("");
   const [sehir, setSehir] = useState("");
   const [deneyim, setDeneyim] = useState("");
@@ -14,7 +16,8 @@ export default function Home() {
   const [ilan, setIlans] = useState([]);
   const [loading, setLoading] = useState(true);
   const [is, setIs] = useState("");
-
+  const [hizliArama, setHizliArama] = useState(false);
+  const [query, setQ] = useState(qData);
   const [jsonFilter, setJsonFilter] = useState({
     tip: tip,
     deneyim: deneyim,
@@ -22,7 +25,7 @@ export default function Home() {
     is: is,
   });
 
-  const isAra = () => {
+  const isAra = (tip, is, deneyim, sehir) => {
     setLoading(true);
     setIlans([]);
     fetch(`${api}/ilan/search`, {
@@ -44,11 +47,37 @@ export default function Home() {
   };
 
   useEffect(() => {
-    isAra();
+    if (Object.keys(query).length > 0) {
+      setHizliArama(true);
+      setSrc(true);
+      setJsonFilter({
+        deneyim: query.experience || "",
+        is: query.value || "",
+        sehir: query.location || "",
+        tip: query.type || "",
+      });
+      setQ({})
+    }
+  }, [query]);
+
+  useEffect(() => {
+    if (Object.keys(query).length === 0) {
+      isAra(
+        jsonFilter.tip,
+        jsonFilter.is,
+        jsonFilter.deneyim,
+        jsonFilter.sehir,
+      );
+    }
+    setSehir(jsonFilter.sehir);
+    setTip(jsonFilter.tip);
+    setIs(jsonFilter.is);
+    setDeneyim(jsonFilter.deneyim);
   }, [jsonFilter]);
 
   const deleteTip = () => {
     setTip("");
+    setHizliArama(false);
     setJsonFilter({
       tip: "",
       sehir: jsonFilter.sehir,
@@ -58,6 +87,7 @@ export default function Home() {
   };
   const deleteSehir = () => {
     setSehir("");
+    setHizliArama(false);
     setJsonFilter({
       tip: jsonFilter.tip,
       sehir: "",
@@ -68,6 +98,7 @@ export default function Home() {
 
   const deleteDeneyim = () => {
     setDeneyim("");
+    setHizliArama(false);
     setJsonFilter({
       tip: jsonFilter.tip,
       sehir: jsonFilter.sehir,
@@ -78,6 +109,7 @@ export default function Home() {
 
   const deleteIs = () => {
     setIs("");
+    setHizliArama(false);
     setJsonFilter({
       tip: jsonFilter.tip,
       sehir: jsonFilter.sehir,
@@ -88,20 +120,27 @@ export default function Home() {
 
   const setAra = () => {
     setJsonFilter({
-      tip: tip,
-      sehir: sehir,
       deneyim: deneyim,
+      sehir: sehir,
       is: is,
+      tip: tip,
     });
     setSrc(true);
   };
 
   useEffect(() => {
-    if (deneyim === "" && sehir === "" && tip === "" && is === '') {
-      setSrc(false)
+    if (
+      deneyim === "" &&
+      sehir === "" &&
+      tip === "" &&
+      is === ""
+    ) {
+      setSrc(false);
     }
   }, [tip, sehir, deneyim, is]);
-
+  useEffect(() => {
+    console.log(query)
+  }, [query]);
   return (
     <Layout>
       <SearchWork
@@ -152,11 +191,39 @@ export default function Home() {
                 </div>
               )}
             </header>
+          ) : hizliArama ? (
+            <div className="tags_src">
+              {qData.location !== undefined ||
+              qData.type !== undefined ||
+              qData.experience !== undefined ||
+              qData.value !== undefined ? (
+                <div className="tag_src h123456">
+                  {qData.location || qData.type || qData.experience || qData.value}
+                  <button
+                    onClick={() => {
+                      if (qData.location !== undefined) {
+                        deleteSehir();
+                      } else if (qData.experience !== undefined) {
+                        deleteDeneyim();
+                      } else if (qData.type !== undefined) {
+                        deleteTip();
+                      } else if (qData.value !== undefined) {
+                        deleteIs();
+                      }
+                    }}
+                  >
+                    <DeleteIcon size={20} color="#111" />
+                  </button>
+                </div>
+              ) : null}
+            </div>
           ) : (
-            <header className="not_search">Yeni ve popüler işler</header>
+            <header className="not_search h123456">
+              Yeni ve popüler işler
+            </header>
           )}
         </div>
-        {ilan.length ? (
+        {ilan.length > 0 ? (
           <div className="row">
             {ilan.map((item, index) => (
               <div
@@ -181,10 +248,12 @@ export default function Home() {
             Eşleşen herrhangi bir ilan bulunamadı
           </div>
         )}
-        {loading ? (
-          <Loader />
-        ) : null}
+        {loading ? <Loader /> : null}
       </div>
     </Layout>
   );
 }
+
+Home.getInitialProps = ({ query }) => {
+  return { qData: query };
+};

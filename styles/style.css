@@ -1055,6 +1055,7 @@ p {
   margin-left: 10px;
   width: 50%;
   margin-right: 5px;
+  outline: none;
   text-align: center;
 }
 .i_btn_ilan:hover {
@@ -1070,6 +1071,7 @@ p {
   display: flex;
   cursor: pointer;
   margin-left: 10px;
+  outline: none;
   margin-right: 5px;
 }
 .s_btn_ilan:hover {
@@ -1098,6 +1100,9 @@ p {
 }
 .json_data {
   text-decoration: none;
+}
+button:focus {
+  outline: none!important;
 }
 .dark_logo,
 .light_logo {
@@ -1235,6 +1240,7 @@ svg:hover > defs > linearGradient > stop.stop_2 {
   border-radius: 3px;
   margin-bottom: 10px;
   border: 1px solid #4b21e423;
+  text-decoration: none;
 }
 .is_tags > .tag_1:hover {
   background-color: #3423ca1c;
@@ -1305,4 +1311,28 @@ main {
 }
 
 
+.ara_btn {
+  padding: 0px 0px;
+  border: 0px;
+  background-color: #3423ca;
+  width: 15%;
+  font-family: FontB, sans-serif;
+  color: #FFF;
+  border-radius: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ara_btn:hover {
+  color: #fff;
+  background-color: #5457f7;
+}
 
+.json_dat2a {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

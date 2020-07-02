@@ -1,8 +1,18 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
+import Link from "next/link";
 
 export default function () {
-  const [tags, setTags] = useState(["Php", "JavaScript", "TypeScript", "Java", "İstanbul", "Ankara", "Microsoft"]);
+  const [tags, setTags] = useState([
+    { id: "Kocaeli", type: "location" },
+    { id: "Senior", type: "experience" },
+    { id: "İstanbul", type: "location" },
+    { id: "Uzaktan", type: "type" },
+    { id: "Tam Zamanlı", type: "type" },
+    { id: "Ankara", type: "location" },
+    { id: "Stajyer", type: "type" },
+  ]);
+  const [value, setValue] = useState("");
   return (
     <Layout>
       <div className="container">
@@ -12,11 +22,26 @@ export default function () {
               <span>Mukemmelis</span>'ini bul
             </div>
             <div className="arama_a">
-              <input className="h123456" placeholder="React, Vue, Java developer" />
-              <button>ARA</button>
+              <input
+                onChange={(event) =>
+                  setValue(event.target.value)
+                }
+                className="h123456"
+                placeholder="React, Vue, Java developer"
+              />
+              <Link href={value === '' ? '/isbul' : `/isbul?value=${value}`}>
+                <a className="ara_btn">ARA</a>
+              </Link>
             </div>
             <div className="is_tags">
-              {tags.map((item, index) => (<div key={index} className="tag_1 h123456">{item}</div>))}
+              {tags.map((item, index) => (
+                <Link
+                  key={index}
+                  href={`/isbul?${item.type}=${item.id}`}
+                >
+                  <a className="tag_1 h123456">{item.id}</a>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

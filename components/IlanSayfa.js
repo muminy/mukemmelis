@@ -39,7 +39,11 @@ export default function ({
           <header>
             <div className="firma_card">
               <div className="firmaAd">{firma_name}</div>
-              <div className="firma_yer">{location === 'default' ? 'Belirlenmedi' : location}</div>
+              <div className="firma_yer">
+                {location === "default"
+                  ? "Belirlenmedi"
+                  : location}
+              </div>
             </div>
             <a
               className="firma_git"
@@ -52,13 +56,17 @@ export default function ({
             <div className="group">
               <h3>Deneyim</h3>
               <div className="value_group">
-                {istenen_deneyim === 'default' ? 'Belirlenmedi' : istenen_deneyim }
+                {istenen_deneyim === "default"
+                  ? "Belirlenmedi"
+                  : istenen_deneyim}
               </div>
             </div>
             <div className="group">
               <h3 className="h123456">Çalışma tipi</h3>
               <div className="value_group">
-                {istene_tip === 'default' ? 'Belirlenmedi' : istene_tip}
+                {istene_tip === "default"
+                  ? "Belirlenmedi"
+                  : istene_tip}
               </div>
             </div>
           </div>

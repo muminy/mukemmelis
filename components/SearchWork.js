@@ -49,7 +49,7 @@ export default function ({
         <div className="row">
           <div className="col-lg-4 sehir_response">
             <div className="filter_src">
-              <h3>Şehir</h3>
+              <h3 className="h123456">Şehir</h3>
               <select
                 value={sehir}
                 onChange={(text) =>
@@ -64,7 +64,7 @@ export default function ({
           </div>
           <div className="col-lg-4">
             <div className="filter_src">
-              <h3>Çalışma tipi</h3>
+              <h3 className="h123456">Çalışma tipi</h3>
               <select
                 value={tip}
                 onChange={(text) =>
@@ -85,7 +85,7 @@ export default function ({
           </div>
           <div className="col-lg-4">
             <div className="filter_src">
-              <h3>İş seviyeniz</h3>
+              <h3 className="h123456">İş seviyeniz</h3>
               <select
                 value={deneyim}
                 onChange={(text) =>

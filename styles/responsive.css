@@ -124,7 +124,6 @@
     margin-bottom: 0px;
   }
   .firma_istek {
-    padding-top: 5px;
     padding-bottom: 48px;
   }
   .create_form {
@@ -166,6 +165,11 @@
   }
   .play_btn:first-child {
     margin-right: 10px;
+  }
+  .is_tags > .tag_1 {
+    font-size: 10px;
+    padding: 3px 10px;
+    padding-top: 5px;
   }
 }
 

@@ -14,25 +14,26 @@ export default function ({
   deleteIlan,
   activeIlan,
   docs,
-  deactive
+  deactive,
+  ilan_id
 }) {
   return (
     <div className="row ilan_details ml_mr">
       <div className="col-lg-3 col-md-6 md_items col-sm-6 ucN h123456">{is_baslik}</div>
-      <div className="col-lg-2 col-md-6 md_items col-sm-6 br_0 h123456">{firma_ad}</div>
-      <div className="col-lg-1 col-md-3 col-sm-3 md_items">
-        <Link href="/">
-          <a className="json_data h123456">JsonData</a>
+      <div className="col-lg-2 col-md-6 md_items col-sm-6 br_0 h123456 ucN">{firma_ad}</div>
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items ucN">
+        <Link href="/admin/ilan/[id]/sartlar" as={`/admin/ilan/${ilan_id}/sartlar`} >
+          <a className="json_data h123456 ucN">JsonData</a>
         </Link>
       </div>
-      <div className="col-lg-1 col-md-3 col-sm-3 md_items">
-        <Link href="/">
-          <a className="json_data h123456">JsonData</a>
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items ucN">
+        <Link href="/admin/ilan/[id]/nitelik" as={`/admin/ilan/${ilan_id}/nitelik`}>
+          <a className="json_data h123456 ucN">JsonData</a>
         </Link>
       </div>
-      <div className="col-lg-1 col-md-3 col-sm-3 md_items h123456">{tip}</div>
-      <div className="col-lg-1 col-md-3 col-sm-3 md_items br_0 h123456">{deneyim}</div>
-      <div className="col-lg-3 islemx col-md-12 col-sm-12 md_items">
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items h123456 ucN">{tip}</div>
+      <div className="col-lg-1 col-md-3 col-sm-3 md_items br_0 h123456 ucN">{deneyim}</div>
+      <div className="col-lg-3 islemx col-md-12 col-sm-12 md_items ucN">
         <button className="i_btn_ilan h123456">
           incele
         </button>
