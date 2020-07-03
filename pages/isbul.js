@@ -6,7 +6,6 @@ import { DeleteIcon } from "../constant/iconsvg";
 import fetch from "node-fetch";
 import { api } from "../constant/api";
 import Loader from "../components/Loader";
-import { useRouter } from "next/router";
 
 export default function Home({ qData }) {
   const [tip, setTip] = useState("");

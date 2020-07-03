@@ -9,14 +9,26 @@ export default function () {
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [code, setCode] = useState(null);
+
   const handleLogin = () => {
     setLoading(true);
     userLogin(user_name, password, (responseJson) => {
       if (!responseJson.code) {
         setLogin(true);
+      } else {
+        setLogin(false);
+        setCode("auth/error");
       }
+      setLoading(false);
     });
   };
+
+  useEffect(() => {
+    if (code === "auth/error") {
+      setTimeout(() => setCode(null), 3000);
+    }
+  }, [code]);
 
   useEffect(() => {
     if (login) {
@@ -30,9 +42,15 @@ export default function () {
         <Loader />
       ) : (
         <div className="login_content">
-          <div>
-            mükemmelis.com admin panel giriş sayfası
-          </div>
+          {code ? (
+            <div className="not_found_src_data">
+              E-mail yada şifre hatalı
+            </div>
+          ) : (
+            <div>
+              mükemmelis.com admin panel giriş sayfası
+            </div>
+          )}
           <div className="form_login">
             <input
               value={user_name}
