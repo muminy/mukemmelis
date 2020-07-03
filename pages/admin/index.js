@@ -1,9 +1,9 @@
-import Layout from '../../components/Layout'
+import { AuthProvider } from "../../utils/AuthContext";
 
-export default function(){
-    return (
-        <Layout admin>
-            sad
-        </Layout>
-    )
+export default function () {
+  return (
+    <AuthProvider>
+        <div>asd</div>
+    </AuthProvider>
+  );
 }

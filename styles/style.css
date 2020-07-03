@@ -1336,3 +1336,57 @@ main {
   align-items: center;
   justify-content: center;
 }
+
+.login_screen {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form_login {
+  display: block;
+  width: 348px;
+  margin-top: 40px;
+}
+.form_login > input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: 0px;
+  background-color: #f3f3f3;
+  padding: 8px 13px;
+  padding-top: 10px;
+  border-radius: 3px;
+}
+.form_login > input:hover {
+  background-color: #eee;
+}
+
+.form_login > button {
+  width: 100%;
+  margin-bottom: 10px;
+  border-width: 0px;
+  background-color: #e4e4fd;
+  padding: 5px 13px;
+  padding-top: 7px;
+  border-radius: 3px;
+  color: #5457f7;
+}
+.form_login > button:hover {
+  background-color: #cacaf7;
+  transition: .3s;
+}
+.login_content > div:first-child {
+    text-align: center;
+}
+
+.cks {
+  color: red!important;
+}
+
+.btn_menu {
+  padding: 0px;
+  background-color: transparent;
+  border-width: 0px;
+}

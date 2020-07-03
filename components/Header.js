@@ -1,5 +1,6 @@
 import Logotext from "./Logotext";
 import Link from "next/link";
+import Router from "next/router";
 
 const MenuIconLines = () => {
   return (
@@ -8,14 +9,18 @@ const MenuIconLines = () => {
       <div className="line_2" />
       <div className="line_3" />
     </div>
-  )
+  );
 };
 
-export default function () {
+export default function ({ admin }) {
+  const logOut = () => {
+    localStorage.clear();
+    Router.push('/admin/login')
+  }
   return (
     <nav className={`navbar navbar-expand-lg navbar-light`}>
       <div className="container">
-        <Logotext />
+        <Logotext location={admin ? "/admin" : "/"} />
         <button
           className="navbar-toggler"
           type="button"
@@ -32,47 +37,31 @@ export default function () {
           id="navbarSupportedContent"
         >
           <div className="menu_list">
-            <Link href="/isbul">
-              <a className="menu_a h123456">Find job</a>
-            </Link>
-            <Link href="/update">
-              <a className="menu_a h123456">Updates</a>
-            </Link>
+            {admin ? (
+              <>
+                <Link href="/admin/ilanlar">
+                  <a className="menu_a h123456">İlanlar</a>
+                </Link>
+                <button onClick={logOut} className="menu_a h123456 cks btn_menu">
+                  Çıkış yap
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/isbul">
+                  <a className="menu_a h123456">Find job</a>
+                </Link>
+                <Link href="/update">
+                  <a className="menu_a h123456">Updates</a>
+                </Link>
+              </>
+            )}
           </div>
-          <Link href="/create">
-            <a className="sirket h123456">Create Job</a>
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-export function AdminHeader() {
-  return (
-    <nav className={`navbar navbar-expand-lg navbar-light`}>
-      <div className="container">
-        <Logotext />
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <MenuIconLines />
-        </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarSupportedContent"
-        >
-          <div className="menu_list">
-            <Link href="/admin/ilanlar">
-              <a className="menu_a h123456">İlanlar</a>
+          {admin ? null : (
+            <Link href="/create">
+              <a className="sirket h123456">Create Job</a>
             </Link>
-          </div>
+          )}
         </div>
       </div>
     </nav>

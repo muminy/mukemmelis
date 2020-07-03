@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function () {
+export default function ({location}) {
   return (
-    <Link href="/">
+    <Link href={location ? location : '/'}>
       <svg
         viewBox="0 0 500 500"
         xmlns="http://www.w3.org/2000/svg"

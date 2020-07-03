@@ -10,7 +10,7 @@ export default function ({ children, title, admin }) {
           {title} {title ? " |" : null} mukemmelis.com
         </title>
       </Head>
-      {admin ? <AdminHeader /> : <Header />}
+      <Header admin={admin} />
       <main>{children}</main>
       <Footer />
     </React.Fragment>
