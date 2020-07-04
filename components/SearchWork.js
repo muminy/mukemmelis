@@ -18,15 +18,12 @@ export default function ({
   return (
     <div className="is_ara">
       <div className="arama_alani">
-        <div className="search_area">
-          <SearchIcon size={25} color="#111" />
-          <input
-            className="user_search_input"
-            value={is}
-            onChange={(text) => getIs(text.target.value)}
-            placeholder="Alanınız..."
-          />
-        </div>
+        <input
+          className="user_search_input"
+          value={is}
+          onChange={(text) => getIs(text.target.value)}
+          placeholder="Alanınız..."
+        />
       </div>
       <div className="row">
         <div className="col-lg-12">

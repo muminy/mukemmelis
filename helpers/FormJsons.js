@@ -93,3 +93,9 @@ export const TipJson = [
     {key: 3, value: 'Stajyer'},
     {key: 4, value: 'Remote'}
 ]
+
+export const BugHata = [
+  {key: 1, value: 'Site için bug'},
+  {key: 2, value: 'Tasarım uyumsuzluğu'},
+  {key: 3, value: 'Kırık link'}
+]

@@ -11,7 +11,7 @@ export default function ({ children, title, admin, header }) {
         </title>
       </Head>
       <Header admin={admin} />
-      <main>{children}</main>
+      <section>{children}</section>
       <Footer />
     </React.Fragment>
   );

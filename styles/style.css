@@ -80,7 +80,7 @@ button:focus {
   outline: none;
 }
 .is_baslik {
-  background-color: #FFAA85;
+  background-image: linear-gradient( 135deg, #EA5455 10%, #FEB692 100%);
 }
 
 .is_ara {
@@ -90,13 +90,14 @@ button:focus {
   padding: 20px 0px;
   background-color: #f1f4f8;
 }
+.arama_alani{margin-bottom: 20px;}
 
-.arama_alani {
-  display: flex;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 1px solid #eee;
+.arama_alani > input {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #d8d8d8;
+  border-radius: 3px;
+  font-size: 14px;
 }
 .sehir_response {
   display: none;
@@ -171,13 +172,9 @@ button:focus {
 
 .filter_src select {
   width: 100%;
-  border: 0px;
-  background-color: #fff;
-  padding: 10px 0px;
-  padding-left: 15px;
-  outline: none;
-  border: 1px solid #eee;
+  border: 1px solid #d8d8d8;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 .slc_area {
@@ -388,22 +385,32 @@ p {
 }
 
 .basvur_big {
-  border-width: 0px;
-  background-color: #213ee4;
-  width: 100%;
-  color: #f1f4f8;
-  border-radius: 5px;
   display: block;
-  text-align: center;
-  padding: 10px 0px;
+  width: 100%;
   text-decoration: none;
-  cursor: pointer;
-}
-.basvur_big:hover {
-  background-color: #324cdf;
-  color: #fff;
+  padding: 10px 0px;
+  text-align: center;
+  font-weight: 900;
+  border-radius: 3px;
 }
 
+._web {
+  border: 2px solid #e42821;
+  color: #e4214b;
+}
+._mail {
+  border: 2px solid #3521e4;
+  color: #3521e4;
+  margin-bottom: 10px;
+}
+._web:hover {
+  background-color: #e4214b15;
+  color: #e42821;
+}
+._mail:hover {
+  background-color: #3521e415;
+  color: #3521e4;
+}
 .find_job_landing {
   display: flex;
   padding: 30px 0px;
@@ -451,7 +458,7 @@ p {
 
 .footer_link {
   margin-left: auto;
-  margin-top: 20px!important;
+  margin-top: 20px !important;
 }
 .footer_link a {
   margin-right: 14px;
@@ -916,7 +923,7 @@ p {
   margin-top: 0px;
   font-weight: 800;
   font-size: 18px;
-  letter-spacing: -.1px;
+  letter-spacing: -0.1px;
 }
 
 .header_ilan > header > .firma_adi {
@@ -957,15 +964,15 @@ p {
   margin-top: 0px;
 }
 .ml_mr {
-  margin-left: 0px!important;
-  margin-right:  0px!important;;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 .ilan_details {
   font-weight: 600;
   font-size: 15px;
   background-color: #f7f7f74b;
   border-radius: 4px;
-  border: 1px solid #f3f3f3af;
+  border: 1px solid #f3f3f3;
   padding: 5px;
   align-items: center;
   margin-bottom: 10px;
@@ -1034,7 +1041,7 @@ p {
   text-decoration: none;
 }
 button:focus {
-  outline: none!important;
+  outline: none !important;
 }
 .dark_logo,
 .light_logo {
@@ -1144,7 +1151,7 @@ svg:hover > defs > linearGradient > stop.stop_2 {
   background-color: #3423ca;
   width: 15%;
   font-family: FontB, sans-serif;
-  color: #FFF;
+  color: #fff;
   border-radius: 40px;
   text-align: center;
 }
@@ -1179,13 +1186,40 @@ svg:hover > defs > linearGradient > stop.stop_2 {
   border: 1px solid #4b21e4;
 }
 
-.n_footer {
-  border-top: 1px solid #eeeeee;
-  padding: 30px 0px;
+.github_katki {
+  background-color: #111111;
+  color: #fff;
+  padding: 18px 0px;
+  text-align: center;
+}
+.flat_area {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.area_f {
+  display: flex;
+  padding: 25px 0px;
+}
+.footer_menu {
+  display: block;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.katkida_bulun {
+  text-decoration: none;
+  color: #242424;
 }
 .logo_a {
   display: flex;
-  align-items: center
+  align-items: center;
+}
+.footer_menu {
+  text-decoration: none;
+}
+.g {
+  color: #3563c7;
+  text-decoration: none;
 }
 .footer_links {
   padding-top: 10px;
@@ -1238,18 +1272,17 @@ svg:hover > defs > linearGradient > stop.stop_2 {
   text-transform: uppercase;
 }
 
-main {
+section {
+  height: 100%;
   padding-bottom: 60px;
 }
-
-
 .ara_btn {
   padding: 0px 0px;
   border: 0px;
   background-color: #3423ca;
   width: 15%;
   font-family: FontB, sans-serif;
-  color: #FFF;
+  color: #fff;
   border-radius: 40px;
   text-align: center;
   text-decoration: none;
@@ -1307,14 +1340,14 @@ main {
 }
 .form_login > button:hover {
   background-color: #cacaf7;
-  transition: .3s;
+  transition: 0.3s;
 }
 .login_content > div:first-child {
-    text-align: center;
+  text-align: center;
 }
 
 .cks {
-  color: red!important;
+  color: red !important;
 }
 
 .btn_menu {
@@ -1337,7 +1370,11 @@ main {
 }
 
 .total_ilans {
-  background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
+  background-image: linear-gradient(
+    135deg,
+    #6b73ff 10%,
+    #000dff 100%
+  );
   padding: 10px 0px;
   margin-bottom: 28px;
   color: #fff;
@@ -1354,7 +1391,9 @@ main {
 .form_group > header > .info_title {
   font-size: 14px;
 }
-.form_group > input, textarea, select {
+.form_group > input,
+textarea,
+select {
   width: 100%;
   padding: 10px 20px;
   border: 1px solid #d8d8d8;
@@ -1389,7 +1428,8 @@ main {
 ._n_list {
   display: flex;
 }
-._n_list > input, .btn_gorunum {
+._n_list > input,
+.btn_gorunum {
   width: 100%;
   padding: 10px 20px;
   border: 1px solid #d8d8d8;
@@ -1397,10 +1437,13 @@ main {
   font-size: 14px;
   background-color: #fff;
 }
-._n_list > input {width: 80%; margin-right: 10px;}
+._n_list > input {
+  width: 80%;
+  margin-right: 10px;
+}
 ._n_list > .btn_gorunum {
-  width: 20%; 
-  margin-left: 10px; 
+  width: 20%;
+  margin-left: 10px;
   text-align: center;
   cursor: pointer;
   padding-top: 12px;
@@ -1416,7 +1459,7 @@ main {
   margin-bottom: 10px;
 }
 .required_error {
-  border: 2px solid red!important;
+  border: 2px solid red !important;
 }
 
 .sart_l_list {
@@ -1424,7 +1467,7 @@ main {
   margin-bottom: 3px;
 }
 .sart_l_list::before {
-  content: '-';
+  content: "-";
   margin-right: 5px;
 }
 
@@ -1449,15 +1492,45 @@ main {
   color: #fff;
   border-radius: 4px;
 }
-.ilan_olustur:hover{
+.ilan_olustur:hover {
   background-color: #5072fd;
 }
 
-.basvuru_alindi  {
+.basvuru_alindi {
   text-align: center;
   padding: 60px 0px;
 }
 .basvuru_alindi > img {
   width: 40%;
   margin-bottom: 40px;
+}
+
+.privacy_content {
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px 0px;
+}
+
+.privacy_content > h1,h2,h3,h4,h5,h6 {
+  font-size: 24px;
+  font-family: FontB, sans-serif;
+}
+.privacy_content > p {
+  font-size: 15px;
+}
+.form_bughata {
+  padding: 30px 0px;
+}
+
+.success_bug_hata {
+  padding: 120px 0px;
+  text-align: center;
+}
+
+.wfull {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 0px;
+  padding: 10px 0px;
 }

@@ -42,6 +42,9 @@ export default function ({ admin }) {
                 <Link href="/admin/ilanlar">
                   <a className="menu_a h123456">İlanlar</a>
                 </Link>
+                <Link href="/admin/hatabug">
+                  <a className="menu_a h123456">Hata & bug</a>
+                </Link>
                 <button
                   onClick={logOut}
                   className="menu_a h123456 cks btn_menu"
@@ -52,17 +55,16 @@ export default function ({ admin }) {
             ) : (
               <>
                 <Link href="/isbul">
-                  <a className="menu_a h123456">Find job</a>
-                </Link>
-                <Link href="/update">
-                  <a className="menu_a h123456">Updates</a>
+                  <a className="menu_a h123456">
+                    Detaylı arama
+                  </a>
                 </Link>
               </>
             )}
           </div>
           {admin ? null : (
             <Link href="/create">
-              <a className="sirket h123456">Create Job</a>
+              <a className="sirket h123456">İlan oluştur</a>
             </Link>
           )}
         </div>

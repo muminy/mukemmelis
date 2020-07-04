@@ -10,7 +10,8 @@ export default function ({
   sehir,
   tip,
   firma_aciklama,
-  basvuru_mail
+  basvuru_mail,
+  basvuru_web
 }) {
   return (
     <React.Fragment>
@@ -81,7 +82,8 @@ export default function ({
                   <p key={index}>{item}</p>
                 ))}
               </div>
-              <a href={basvuru_mail} className="basvur_big">Başvur</a>
+              {basvuru_mail ? <a href={`mailto:${basvuru_mail}`} className="basvur_big _mail h123456">Mail ile başvuru yap</a> : null}
+              {basvuru_web ? <a href={basvuru_web} className="basvur_big _web h123456">Web sitesi ile başvuru yap</a> : null}
             </div>
           </div>
         </div>
