@@ -55,7 +55,7 @@ export default function () {
   };
 
   return (
-    <AuthProvider>
+    <AuthProvider title="İlanlar - Admin">
       {loading ? (
         <Loader />
       ) : (

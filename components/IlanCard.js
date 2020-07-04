@@ -20,21 +20,21 @@ export default function ({
         <div className="header_ilan">
           <img src={src} />
           <header>
-            <h3>{is}</h3>
+            <h3 className="h123456">{is}</h3>
             <div className="firma_adi">{firma}</div>
           </header>
         </div>
         <div className="firma_infos">
           <div className="aciklama_ii">
-            <div className="lo">Şehir</div>
+            <div className="lo h123456">Şehir</div>
             <div className="val">{location}</div>
           </div>
           <div className="aciklama_ii">
-            <div className="lo">Deneyim</div>
+            <div className="lo h123456">Deneyim</div>
             <div className="val">{deneyim}</div>
           </div>
           <div className="aciklama_ii">
-            <div className="lo">Çalışmna tipi</div>
+            <div className="lo h123456">Çalışma tipi</div>
             <div className="val">{tip}</div>
           </div>
         </div>

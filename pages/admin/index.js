@@ -2,7 +2,7 @@ import { AuthProvider } from "../../utils/AuthContext";
 
 export default function () {
   return (
-    <AuthProvider>
+    <AuthProvider title="Admin">
         <div>asd</div>
     </AuthProvider>
   );

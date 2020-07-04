@@ -14,7 +14,7 @@ export default function () {
   ]);
   const [value, setValue] = useState("");
   return (
-    <Layout>
+    <Layout title="Mükemmelis'ini bul">
       <div className="container">
         <div className="media_area">
           <div className="is_ara_dev">

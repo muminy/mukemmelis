@@ -14,7 +14,7 @@ export default function IlanPage({ id, slug }) {
   }, []);
 
   return (
-    <Layout>
+    <Layout title={ilanData?.is_baslik}>
       {ilanData ? (
         <IlanComponent {...ilanData} />
       ) : (

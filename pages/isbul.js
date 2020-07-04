@@ -55,7 +55,7 @@ export default function Home({ qData }) {
         sehir: query.location || "",
         tip: query.type || "",
       });
-      setQ({})
+      setQ({});
     }
   }, [query]);
 
@@ -124,7 +124,15 @@ export default function Home({ qData }) {
       is: is,
       tip: tip,
     });
-    setSrc(true);
+    if (
+      tip === "" &&
+      sehir === "" &&
+      deneyim === "" &&
+      is === ""
+    ) {
+    } else {
+      setSrc(true);
+    }
   };
 
   useEffect(() => {
@@ -137,117 +145,157 @@ export default function Home({ qData }) {
       setSrc(false);
     }
   }, [tip, sehir, deneyim, is]);
-  useEffect(() => {
-    console.log(query)
-  }, [query]);
   return (
-    <Layout>
-      <SearchWork
-        tip={tip}
-        getTip={(value) => setTip(value)}
-        sehir={sehir}
-        getSehir={(value) => setSehir(value)}
-        deneyim={deneyim}
-        getDeneyim={(value) => setDeneyim(value)}
-        isAra={() => setAra()}
-        getIs={(value) => setIs(value)}
-        is={is}
-      />
-      <div className="container">
-        <div className="tum_isler">
-          {src ? (
-            <header className="tags_src">
-              {jsonFilter.is === "" ? null : (
-                <div className="tag_src">
-                  {jsonFilter.is}
-                  <button onClick={() => deleteIs()}>
-                    <DeleteIcon size={20} color="#111" />
-                  </button>
-                </div>
-              )}
-              {jsonFilter.sehir === "" ? null : (
-                <div className="tag_src">
-                  {jsonFilter.sehir}
-                  <button onClick={() => deleteSehir()}>
-                    <DeleteIcon size={20} color="#111" />
-                  </button>
-                </div>
-              )}
-              {jsonFilter.tip === "" ? null : (
-                <div className="tag_src">
-                  {jsonFilter.tip}
-                  <button onClick={() => deleteTip()}>
-                    <DeleteIcon size={20} color="#111" />
-                  </button>
-                </div>
-              )}
-              {jsonFilter.deneyim === "" ? null : (
-                <div className="tag_src">
-                  {jsonFilter.deneyim}
-                  <button onClick={() => deleteDeneyim()}>
-                    <DeleteIcon size={20} color="#111" />
-                  </button>
-                </div>
-              )}
-            </header>
-          ) : hizliArama ? (
-            <div className="tags_src">
-              {qData.location !== undefined ||
-              qData.type !== undefined ||
-              qData.experience !== undefined ||
-              qData.value !== undefined ? (
-                <div className="tag_src h123456">
-                  {qData.location || qData.type || qData.experience || qData.value}
-                  <button
-                    onClick={() => {
-                      if (qData.location !== undefined) {
-                        deleteSehir();
-                      } else if (qData.experience !== undefined) {
-                        deleteDeneyim();
-                      } else if (qData.type !== undefined) {
-                        deleteTip();
-                      } else if (qData.value !== undefined) {
-                        deleteIs();
-                      }
-                    }}
-                  >
-                    <DeleteIcon size={20} color="#111" />
-                  </button>
-                </div>
-              ) : null}
+    <Layout title="İş'ini bul">
+      <div className="total_ilans">
+        <div className="container">
+          <div className="ti_content ">
+            <div className="h123456 ti_tile">
+              Toplam 18.271 ilan arasından arama yapın.
             </div>
-          ) : (
-            <header className="not_search h123456">
-              Yeni ve popüler işler
-            </header>
-          )}
+          </div>
         </div>
-        {ilan.length > 0 ? (
-          <div className="row">
-            {ilan.map((item, index) => (
-              <div
-                key={index}
-                className="col-lg-6 col-md-12"
-              >
-                <IlanCard
-                  firma={item.firma_ad}
-                  location={item.sehir}
-                  is={item.is_baslik}
-                  id={item.ilan_id}
-                  deneyim={item.deneyim}
-                  tip={item.tip}
-                  src={`https://firebasestorage.googleapis.com/v0/b/mukemmelis-5d0ef.appspot.com/o/firma%2F${item.slug_image}?alt=media`}
-                  slug={item.slug}
-                />
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-3">
+            <SearchWork
+              tip={tip}
+              getTip={(value) => setTip(value)}
+              sehir={sehir}
+              getSehir={(value) => setSehir(value)}
+              deneyim={deneyim}
+              getDeneyim={(value) => setDeneyim(value)}
+              isAra={() => setAra()}
+              getIs={(value) => setIs(value)}
+              is={is}
+            />
+          </div>
+          <div className="col-lg-9">
+            <div className="tum_isler">
+              {src ? (
+                <header className="tags_src">
+                  {jsonFilter.is === "" ? null : (
+                    <div className="tag_src">
+                      {jsonFilter.is}
+                      <button onClick={() => deleteIs()}>
+                        <DeleteIcon
+                          size={20}
+                          color="#111"
+                        />
+                      </button>
+                    </div>
+                  )}
+                  {jsonFilter.sehir === "" ? null : (
+                    <div className="tag_src">
+                      {jsonFilter.sehir}
+                      <button onClick={() => deleteSehir()}>
+                        <DeleteIcon
+                          size={20}
+                          color="#111"
+                        />
+                      </button>
+                    </div>
+                  )}
+                  {jsonFilter.tip === "" ? null : (
+                    <div className="tag_src">
+                      {jsonFilter.tip}
+                      <button onClick={() => deleteTip()}>
+                        <DeleteIcon
+                          size={20}
+                          color="#111"
+                        />
+                      </button>
+                    </div>
+                  )}
+                  {jsonFilter.deneyim === "" ? null : (
+                    <div className="tag_src">
+                      {jsonFilter.deneyim}
+                      <button
+                        onClick={() => deleteDeneyim()}
+                      >
+                        <DeleteIcon
+                          size={20}
+                          color="#111"
+                        />
+                      </button>
+                    </div>
+                  )}
+                </header>
+              ) : hizliArama ? (
+                <div className="tags_src">
+                  {qData.location !== undefined ||
+                  qData.type !== undefined ||
+                  qData.experience !== undefined ||
+                  qData.value !== undefined ? (
+                    <div className="tag_src h123456">
+                      {qData.location ||
+                        qData.type ||
+                        qData.experience ||
+                        qData.value}
+                      <button
+                        onClick={() => {
+                          if (
+                            qData.location !== undefined
+                          ) {
+                            deleteSehir();
+                          } else if (
+                            qData.experience !== undefined
+                          ) {
+                            deleteDeneyim();
+                          } else if (
+                            qData.type !== undefined
+                          ) {
+                            deleteTip();
+                          } else if (
+                            qData.value !== undefined
+                          ) {
+                            deleteIs();
+                          }
+                        }}
+                      >
+                        <DeleteIcon
+                          size={20}
+                          color="#111"
+                        />
+                      </button>
+                    </div>
+                  ) : null}
+                </div>
+              ) : loading ? null : (
+                <header className="not_search h123456">
+                  Yeni ve popüler işler
+                </header>
+              )}
+            </div>
+            {ilan.length > 0 ? (
+              <div className="row">
+                {ilan.map((item, index) => (
+                  <div
+                    key={index}
+                    className="col-lg-6 col-md-12"
+                  >
+                    <IlanCard
+                      firma={item.firma_ad}
+                      location={item.sehir}
+                      is={item.is_baslik}
+                      id={item.ilan_id}
+                      deneyim={item.deneyim}
+                      tip={item.tip}
+                      src={`https://firebasestorage.googleapis.com/v0/b/mukemmelis-5d0ef.appspot.com/o/firma%2F${item.slug_image}?alt=media`}
+                      slug={item.slug}
+                    />
+                  </div>
+                ))}
               </div>
-            ))}
+            ) : loading ? null : (
+              <div className="not_found_src_data">
+                Eşleşen herrhangi bir ilan bulunamadı
+              </div>
+            )}
+            {loading ? <Loader /> : null}
           </div>
-        ) : loading ? null : (
-          <div className="not_found_src_data">
-            Eşleşen herrhangi bir ilan bulunamadı
-          </div>
-        )}
-        {loading ? <Loader /> : null}
+        </div>
       </div>
     </Layout>
   );

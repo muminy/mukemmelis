@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 
 export default function () {
   return (
-    <Layout>
+    <Layout title="Güncellemeler">
       <div className="h_ii">
         <div className="container">
           <div className="upg_header">
@@ -24,7 +24,9 @@ export default function () {
             <time>
               Friday, May 1st 2020 (about 2 months ago)
             </time>
-            <header className="h123456">Protecting Deployments</header>
+            <header className="h123456">
+              Protecting Deployments
+            </header>
             <div className="content">
               <p>
                 Pushing a change to your project results in
@@ -43,13 +45,23 @@ export default function () {
             </div>
           </div>
           <div className="added">
-              <header className="h123456">Değişiklikler</header>
-              <div className="degisiklik_list">
-                  <div className="added_list">Konuma göre arama eklendi</div>
-                  <div className="added_list">Maaşa göre arama eklendi</div>
-                  <div className="delete_list">Gereksiz ilanlar temizlendi</div>
-                  <div className="delete_list">Tarihe göre arama kaldırıldı</div>
+            <header className="h123456">
+              Değişiklikler
+            </header>
+            <div className="degisiklik_list">
+              <div className="added_list">
+                Konuma göre arama eklendi
               </div>
+              <div className="added_list">
+                Maaşa göre arama eklendi
+              </div>
+              <div className="delete_list">
+                Gereksiz ilanlar temizlendi
+              </div>
+              <div className="delete_list">
+                Tarihe göre arama kaldırıldı
+              </div>
+            </div>
           </div>
         </div>
 
@@ -58,7 +70,9 @@ export default function () {
             <time>
               Friday, May 1st 2020 (about 2 months ago)
             </time>
-            <header className="h123456">Protecting Deployments</header>
+            <header className="h123456">
+              Protecting Deployments
+            </header>
             <div className="content">
               <p>
                 Pushing a change to your project results in
@@ -77,13 +91,23 @@ export default function () {
             </div>
           </div>
           <div className="added">
-              <header className="h123456">Değişiklikler</header>
-              <div className="degisiklik_list">
-                  <div className="added_list">Konuma göre arama eklendi</div>
-                  <div className="added_list">Maaşa göre arama eklendi</div>
-                  <div className="delete_list">Gereksiz ilanlar temizlendi</div>
-                  <div className="delete_list">Tarihe göre arama kaldırıldı</div>
+            <header className="h123456">
+              Değişiklikler
+            </header>
+            <div className="degisiklik_list">
+              <div className="added_list">
+                Konuma göre arama eklendi
               </div>
+              <div className="added_list">
+                Maaşa göre arama eklendi
+              </div>
+              <div className="delete_list">
+                Gereksiz ilanlar temizlendi
+              </div>
+              <div className="delete_list">
+                Tarihe göre arama kaldırıldı
+              </div>
+            </div>
           </div>
         </div>
       </div>

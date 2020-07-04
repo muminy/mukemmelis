@@ -1,19 +1,29 @@
 @font-face {
-  font-family: FontR;
-  src: url(/fonts/MaisonNeue-Book.woff);
+  font-family: Selects;
+  src: url(/fonts/OpenSans-Regular.ttf);
   font-style: normal;
+  font-display: swap;
 }
-
 
 @font-face {
   font-family: FontB;
   src: url(/fonts/MaisonNeue-Bold.woff);
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: FontR;
+  src: url(/fonts/MaisonNeue-Book.woff);
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: FontEB;
   src: url(/fonts/FuturaLT-ExtraBold.ttf);
   font-style: normal;
+  font-display: swap;
+  font-weight: 400;
 }
 

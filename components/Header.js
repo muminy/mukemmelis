@@ -15,8 +15,8 @@ const MenuIconLines = () => {
 export default function ({ admin }) {
   const logOut = () => {
     localStorage.clear();
-    Router.push('/admin/login')
-  }
+    Router.push("/admin/login");
+  };
   return (
     <nav className={`navbar navbar-expand-lg navbar-light`}>
       <div className="container">
@@ -42,7 +42,10 @@ export default function ({ admin }) {
                 <Link href="/admin/ilanlar">
                   <a className="menu_a h123456">İlanlar</a>
                 </Link>
-                <button onClick={logOut} className="menu_a h123456 cks btn_menu">
+                <button
+                  onClick={logOut}
+                  className="menu_a h123456 cks btn_menu"
+                >
                   Çıkış yap
                 </button>
               </>

@@ -5,7 +5,7 @@ import Loader from "../components/Loader";
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({ children, getLogin }) => {
+export const AuthProvider = ({ children, title }) => {
   const [login, setLogin] = useState(null);
   useEffect(() => {
     setLogin(
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children, getLogin }) => {
   }, [login]);
 
   if (login) {
-    return <Layout admin>{children}</Layout>;
+    return <Layout title={title} admin>{children}</Layout>;
   } else {
     return <Loader />;
   }

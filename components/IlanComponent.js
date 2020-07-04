@@ -10,11 +10,11 @@ export default function ({
   sehir,
   tip,
   firma_aciklama,
-  basvuru_web
+  basvuru_mail
 }) {
   return (
     <React.Fragment>
-      <div className="is_ara padd_v">
+      <div className="is_baslik padd_v">
         <div className="container">
           <div className="header_article">
             <header className="h123456">{is_baslik}</header>
@@ -81,7 +81,7 @@ export default function ({
                   <p key={index}>{item}</p>
                 ))}
               </div>
-              <a href={basvuru_web} className="basvur_big">Başvur</a>
+              <a href={basvuru_mail} className="basvur_big">Başvur</a>
             </div>
           </div>
         </div>

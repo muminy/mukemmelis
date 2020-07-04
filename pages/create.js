@@ -1,272 +1,409 @@
-import Logotext from "../components/Logotext";
-import Steps from "../components/Steps";
-import CreateFooter from "../components/CreateFooter";
-import FirmaStep from "../components/steps/FirmaStep";
 import { useState, useEffect } from "react";
-import SartNitelik from "../components/steps/IsBilgi";
-import IlanSayfa from "../components/IlanSayfa";
 import {
   setBasvuruData,
   getLastId,
-  setImageFirma
+  setImageFirma,
 } from "../lib/basvuru";
-import Link from "next/link";
+import {
+  SehirlerJson,
+  DeneyimJson,
+  TipJson,
+} from "../helpers/FormJsons";
 import slugify from "slugify";
+import { useForm } from "react-hook-form";
 import Layout from "../components/Layout";
 export default function () {
-  const [steps, setSteps] = useState([
-    {
-      id: 1,
-      text: "Firma bilgisi",
-      active: true,
-      Component: FirmaStep,
-      validate: false,
-    },
-    {
-      id: 2,
-      text: "Şart & Nitelik",
-      active: false,
-      Component: SartNitelik,
-      validate: false,
-    },
-    {
-      id: 3,
-      text: "Onay",
-      active: false,
-      Component: IlanSayfa,
-      validate: false,
-    },
-  ]);
-
-  const [ilan_id, setIlanId] = useState(null);
+  const [n_value, setNValue] = useState("");
+  const [s_value, setSValue] = useState("");
+  const [nitelik, setIsNitelik] = useState([]);
+  const [sart, setIsSart] = useState([]);
+  const [last_id, setLastId] = useState(null);
+  const { register, handleSubmit, errors } = useForm();
   const [success, setSuccess] = useState(false);
-  const [niteliks, setNiteliks] = useState([]);
-  const [sartlar, setSartlar] = useState([]);
-  const [name, setName] = useState("");
-  const [firmaAciklama, setFirmaAciklama] = useState("");
-  const [tip, setTip] = useState("default");
-  const [deneyim, setDeneyim] = useState("default");
-  const [sehir, setSehir] = useState("default");
-  const [is, setIs] = useState("");
-  const [web, setWeb] = useState("");
-  const [mail, setMail] = useState("");
-  const [isAciklama, setIsAciklama] = useState("");
-  const [firmaAciklamaToHtml, setFirmaToHtml] = useState(
-    [],
-  );
-  const [link, setLink] = useState("");
-  const [isAciklamaToHtml, setisToHtml] = useState([]);
-  const [file, setFile] = useState('');
 
   useEffect(() => {
     getLastId().then((responseJson) =>
       responseJson.forEach((last_child) =>
-        setIlanId(last_child.data().ilan_id + 1),
+        setLastId(last_child.data().ilan_id + 1),
       ),
     );
   }, []);
 
-  useEffect(() => {
-    const satir = firmaAciklama.split("\n");
-    const new_data = [];
-    for (let i = 0; i < satir.length; i++) {
-      satir[i] !== ""
-        ? new_data.push({ html: <p>{satir[i]}</p> })
-        : null;
+  const addNitelik = () => {
+    if (n_value !== "") {
+      setIsNitelik((prevState) => {
+        prevState.push(n_value);
+        setNValue("");
+        return [...prevState];
+      });
     }
-    setFirmaToHtml(new_data);
-  }, [firmaAciklama]);
+  };
 
-  useEffect(() => {
-    const satir = isAciklama.split("\n");
-    const new_data = [];
-    for (let i = 0; i < satir.length; i++) {
-      satir[i] !== ""
-        ? new_data.push({ html: <p key={i}>{satir[i]}</p> })
-        : null;
+  const addSart = () => {
+    if (s_value !== "") {
+      setIsSart((prevState) => {
+        prevState.push(s_value);
+        setSValue("");
+        return [...prevState];
+      });
     }
-    setisToHtml(new_data);
-  }, [isAciklama]);
+  };
 
-  const setGeri = () => {
-    const fnd = steps.find((item) => item.active);
-    setSteps((prevSteps) => {
-      prevSteps[fnd.id - 1].active = false;
-      prevSteps[fnd.id - 2].active = true;
-      return [...prevSteps];
+  const deleteSart = (index) => {
+    setIsSart((prevState) => {
+      prevState.splice(index, 1);
+      return [...prevState];
     });
   };
 
-  const setIleri = () => {
-    const fnd = steps.find((item) => item.active);
-    setSteps((prevSteps) => {
-      prevSteps[fnd.id - 1].active = false;
-      prevSteps[fnd.id].active = true;
-      return [...prevSteps];
+  const deleteNitelik = (index) => {
+    setIsNitelik((prevState) => {
+      prevState.splice(index, 1);
+      return [...prevState];
     });
   };
 
-  const handleOnayla = async () => {
-    if (
-      name === "" ||
-      firmaAciklama === "" ||
-      tip === "default" ||
-      deneyim === "default" ||
-      sehir === "default" ||
-      web === "" ||
-      mail === "",
-      file[0]?.type !== 'image/png'
-    ) {
-      setSteps((prevState) => {
-        prevState[0].validate = true;
-        const activeIndex = prevState.findIndex(
-          (item) => item.active,
-        );
-        prevState[activeIndex].active = false;
-        prevState[0].active = true;
-        return [...prevState];
-      });
-    } else if (
-      is === "" ||
-      isAciklama === "" ||
-      niteliks.length === 0 ||
-      sartlar.length === 0
-    ) {
-      setSteps((prevState) => {
-        prevState[1].validate = true;
-        const activeIndex = prevState.findIndex(
-          (item) => item.active,
-        );
-        prevState[activeIndex].active = false;
-        prevState[1].active = true;
-        return [...prevState];
-      });
-    } else {
-      const slug_image = slugify(`${ilan_id || 1} ${name}`, {
-        lower: true
-      });
-      const slug_isBaslik = slugify(is, {
-        lower: true
-      });
-      const jsonData = {
-        basvuru_mail: mail,
-        web_site: web,
-        tip: tip,
-        sehir: sehir,
-        is_sart: sartlar,
-        is_nitelik: niteliks,
-        is_baslik: is,
-        is_aciklama: isAciklama.split("\n"),
-        firma_ad: name,
-        firma_aciklama: firmaAciklama.split("\n"),
-        deneyim: deneyim,
-        ilan_id: ilan_id || 1,
-        create_date: new Date().toISOString(),
-        slug: slug_isBaslik,
-        slug_image: slug_image,
-        active: false
-      };
-      setBasvuruData(
-        jsonData,
-        (responseJson) => {
-          if (responseJson.code === 200) {
-            setSuccess(true);
-            setImageFirma(file[0], slug_image);
-            setLink("/ilan/" + (ilan_id || 1) + '/' + slug_isBaslik);
-          }
-        },
+  const onSubmit = (data) => {
+    if (nitelik.length >= 1 && sart.length >= 1) {
+      const f_aciklama = data.firma_aciklama;
+      const is_aciklama = data.is_aciklama;
+      delete data.firma_aciklama;
+      delete data.is_aciklama;
+      const slug_image = slugify(
+        `${last_id || 1} ${data.is_baslik} ${
+          data.firma_ad
+        }`,
+        { lower: true },
       );
+      const total_data = Object.assign(
+        {
+          ilan_id: last_id,
+          is_nitelik: nitelik,
+          is_sart: sart,
+          create_date: new Date().toISOString(),
+          active: false,
+          firma_aciklama: f_aciklama.split("\n"),
+          is_aciklama: is_aciklama.split("\n"),
+          slug_image: slug_image,
+        },
+        data,
+      );
+      
+      setImageFirma(total_data.firma_resim[0], slug_image);
+      delete total_data.firma_resim;
+      setBasvuruData(total_data, (responseJson) => {
+        if (responseJson.code === 200) {
+          setSuccess(true);
+        }
+      });
     }
-    setTimeout(setValidate, 3000);
   };
-
-  const setValidate = () => {
-    setSteps((prevStates) => {
-      prevStates[0].validate = false;
-      prevStates[1].validate = false;
-      prevStates[2].validate = false;
-      return [...prevStates];
-    });
-  };
-
   return (
-    <Layout>
-      <div
-        className={`create_area container ${
-          steps[steps.length - 1].active ? "full_width" : ""
-        }`}
-      >
+    <Layout title="İlan oluştur">
+      <div className="total_ilans">
+        <div className="container">
+          <div className="ti_content ">
+            <div className="h123456 ti_tile">
+              İlan oluşturmak ücretsizdir
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container">
         {success ? (
-          <div className="success_ilan">
-            <div className="align_center">
-              Kayıt Başarılı
-              <Link href="/ilan/[id]/[slug]" as={link}>
-                <a className="ilana_git">İlana git</a>
-              </Link>
+          <div className="basvuru_alindi">
+            <img src="/svg/success_add.svg" />
+            <div className="ilan_ti h123456">
+              Başvurunuz alındı, en kısa sürede sizinle
+              iletişime geçeceğiz!
             </div>
           </div>
         ) : (
-          <>
-            <Steps steps={steps} />
-            <div
-              className={`create_form ${
-                steps[steps.length - 1].active
-                  ? "full_width"
-                  : ""
-              }`}
-            >
-              {steps.map((item, index) =>
-                item.active ? (
-                  <item.Component
-                    getSartlar={(get) => setSartlar(get)}
-                    sarts={sartlar}
-                    getNitelik={(get) => setNiteliks(get)}
-                    nitelikler={niteliks}
-                    key={item.id}
-                    name={name}
-                    getName={(get) => setName(get)}
-                    hakkinda={firmaAciklama}
-                    getHakkinda={(get) =>
-                      setFirmaAciklama(get)
-                    }
-                    file={file}
-                    getFile={value => setFile(value)}
-                    tip={tip}
-                    getTip={(get) => setTip(get)}
-                    deneyim={deneyim}
-                    getDeneyim={(get) => setDeneyim(get)}
-                    sehir={sehir}
-                    getSehir={(get) => setSehir(get)}
-                    getIs={(get) => setIs(get)}
-                    is={is}
-                    validate={item.validate}
-                    isAciklama={isAciklama}
-                    getIsAciklama={(get) =>
-                      setIsAciklama(get)
-                    }
-                    firma_aciklama={firmaAciklamaToHtml}
-                    firma_name={name}
-                    is_aciklama={isAciklamaToHtml}
-                    istene_tip={tip}
-                    istenen_deneyim={deneyim}
-                    location={sehir}
-                    nData={niteliks}
-                    sData={sartlar}
-                    mail={mail}
-                    getMail={(get) => setMail(get)}
-                    web={web}
-                    getWeb={(get) => setWeb(get)}
-                  />
-                ) : null,
-              )}
-              <CreateFooter
-                steps={steps}
-                ileri={() => setIleri()}
-                geri={() => setGeri()}
-                onayla={() => handleOnayla()}
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  İş başlığı
+                </div>
+                <div className="info_title">
+                  İş başlığı; aramalarda sizi ön plana
+                  çıkarmak için önemlidir
+                </div>
+              </header>
+              <input
+                name="is_baslik"
+                className={
+                  errors.is_baslik ? "required_error" : ""
+                }
+                ref={register({ required: true })}
+                placeholder="Frontend developer"
               />
             </div>
-          </>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  İş Açıklaması
+                </div>
+                <div className="info_title">
+                  Çalışanlar/iş arayanlar ilanınızı daha iyi
+                  anlayabilmesi/kavrayabilmesi için
+                  önemlidir.
+                </div>
+              </header>
+              <textarea
+                name="is_aciklama"
+                rows={10}
+                className={
+                  errors.is_aciklama ? "required_error" : ""
+                }
+                ref={register({ required: true })}
+                placeholder="Frontend developer"
+              ></textarea>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  Şehir
+                </div>
+              </header>
+              <select
+                name="sehir"
+                className={
+                  errors.is_sehir ? "required_error" : ""
+                }
+                ref={register({ required: true })}
+              >
+                <option value="">Şehir seçin</option>
+                {SehirlerJson.map((item) => (
+                  <option {...item}>{item.value}</option>
+                ))}
+              </select>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  Deneyim
+                </div>
+                <div className="info_title">
+                  Çalışanlar/iş arayanlar şirketinizin
+                  aranan deneyim'i bilmesi gereksiz
+                  başvuruların önüne geçer.
+                </div>
+              </header>
+              <select
+                className={
+                  errors.is_deneyim ? "required_error" : ""
+                }
+                name="deneyim"
+                ref={register({ required: true })}
+              >
+                <option value="">Deneyim seçin</option>
+                {DeneyimJson.map((item) => (
+                  <option {...item}>{item.value}</option>
+                ))}
+              </select>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  Çalışma tipi
+                </div>
+                <div className="info_title">
+                  Çalışanlar/iş arayanlar şirketinizin
+                  çalışma tipini bilmesi gereksiz
+                  başvuruların önüne geçer.
+                </div>
+              </header>
+              <select
+                name="tip"
+                className={
+                  errors.is_tip ? "required_error" : ""
+                }
+                ref={register({ required: true })}
+              >
+                <option value="">Çalışma tipi seçin</option>
+                {TipJson.map((item) => (
+                  <option {...item}>{item.value}</option>
+                ))}
+              </select>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  İş nitelikleri
+                </div>
+                <div className="info_title">
+                  Çalışanlarınızdan aradığınız nitelikler,
+                  iş arayanlar için önemli bir unsurdur.
+                </div>
+              </header>
+              {nitelik.length ? (
+                <div className="list_of_list">
+                  {nitelik.map((item, index) => (
+                    <div
+                      key={index}
+                      className="sart_l_list"
+                    >
+                      {item}
+                      <div
+                        onClick={() => deleteNitelik(index)}
+                        className="sil__list h123456"
+                      >
+                        sil
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              <div className="_n_list">
+                <input
+                  value={n_value}
+                  onChange={(event) =>
+                    setNValue(event.target.value)
+                  }
+                  placeholder="Bir nitelik ekleyin"
+                />
+                <div
+                  className="btn_gorunum"
+                  onClick={addNitelik}
+                >
+                  EKLE
+                </div>
+              </div>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  İş şartları
+                </div>
+                <div className="info_title">
+                  Çalışanlara sunduğunuz iş olanakları, iş
+                  başvurularının artmasına/azalmasına neden
+                  olur.
+                </div>
+              </header>
+              {sart.length ? (
+                <div className="list_of_list">
+                  {sart.map((item, index) => (
+                    <div
+                      key={index}
+                      className="sart_l_list"
+                    >
+                      {item}
+                      <div
+                        onClick={() => deleteSart(index)}
+                        className="sil__list h123456"
+                      >
+                        sil
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+              <div className="_n_list">
+                <input
+                  value={s_value}
+                  onChange={(event) =>
+                    setSValue(event.target.value)
+                  }
+                  placeholder="Bir sart ekleyin"
+                />
+                <div
+                  className="btn_gorunum"
+                  onClick={addSart}
+                >
+                  EKLE
+                </div>
+              </div>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  İş Başvuru
+                </div>
+              </header>
+              <input
+                name="basvuru_web"
+                ref={register({ required: true })}
+                className={
+                  errors.basvuru_web
+                    ? "required_error mb"
+                    : "mb"
+                }
+                placeholder="Web"
+              />
+              <input
+                name="basvuru_mail"
+                className={
+                  errors.basvuru_mail
+                    ? "required_error"
+                    : ""
+                }
+                ref={register({ required: true })}
+                placeholder="Mail"
+              />
+            </div>
+            <header className="firma_b h123456">
+              Firma bilgisi
+            </header>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  Firma adı
+                </div>
+              </header>
+              <input
+                name="firma_ad"
+                className={
+                  errors.firma_ad ? "required_error" : ""
+                }
+                ref={register({ required: true })}
+                placeholder="Frontend developer"
+              />
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  Firma Açıklaması
+                </div>
+                <div className="info_title">
+                  Firma/şirket açıklaması önemi çalışanların
+                  üzerinde oldukça önemlidir
+                </div>
+              </header>
+              <textarea
+                name="firma_aciklama"
+                rows={10}
+                className={
+                  errors.firma_aciklama
+                    ? "required_error"
+                    : ""
+                }
+                ref={register({ required: true })}
+                placeholder="Frontend developer"
+              ></textarea>
+            </div>
+            <div className="form_group">
+              <header>
+                <div className="form_title h123456">
+                  Firma resmi
+                </div>
+              </header>
+              <input
+                name="firma_resim"
+                className={
+                  errors.firma_resim ? "required_error" : ""
+                }
+                ref={register({ required: true })}
+                type="file"
+              />
+            </div>
+            <div className="form_group">
+              <button className="ilan_olustur h123456">
+                İlan oluştur
+              </button>
+            </div>
+          </form>
         )}
       </div>
     </Layout>

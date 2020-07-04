@@ -2,7 +2,7 @@ import Head from "next/head";
 import Header, { AdminHeader } from "./Header";
 import Footer from "./Footer";
 
-export default function ({ children, title, admin }) {
+export default function ({ children, title, admin, header }) {
   return (
     <React.Fragment>
       <Head>
