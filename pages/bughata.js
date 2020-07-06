@@ -20,7 +20,7 @@ export default function () {
         <div className="form_bughata">
           {success ? (
             <div className="success_bug_hata h123456">
-              Geri bildiriminiz için teşekkürler!
+              Geri bildiriminiz için teşekkürler!!
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)}>
