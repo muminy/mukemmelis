@@ -85,6 +85,7 @@ export default function () {
           firma_aciklama: f_aciklama.split("\n"),
           is_aciklama: is_aciklama.split("\n"),
           slug_image: slug_image,
+          slug: slugify(data.is_baslik,{ lower: true })
         },
         data,
       );

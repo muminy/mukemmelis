@@ -40,13 +40,9 @@
   }
   .menu_list .menu_a {
     display: block;
-    margin-left: 0px;
-    margin-bottom: 25px;
-    margin-top: 5px;
     text-align: center;
-    font-weight: 900;
+    margin-bottom: 10px;
     font-size: 24px;
-    font-family: FontEB, sans-serif;
   }
   .sirket {
     margin-left: 0px;
@@ -55,7 +51,6 @@
     font-weight: 900;
     width: 100%;
     text-align: center;
-    font-family: FontEB, sans-serif;
   }
   .find_job_landing {
     display: block;

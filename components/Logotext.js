@@ -1,35 +1,22 @@
 import Link from "next/link";
 
-export default function ({location}) {
+export default function ({ location }) {
   return (
-    <Link href={location ? location : '/'}>
+    <Link href={location ? location : "/"}>
       <svg
-        viewBox="0 0 500 500"
         xmlns="http://www.w3.org/2000/svg"
         width={45}
         height={45}
-        id="blobSvg"
-        className="logo_svg"
+        viewBox="0 0 100 100"
       >
-        <defs>
-          <linearGradient
-            id="gradient"
-            x1="0%"
-            y1="0%"
-            x2="0%"
-            y2="100%"
-          >
-            <stop offset="0%" stopColor="#3423ca"></stop>
-            <stop offset="100%" stopColor="#3423ca"></stop>
-          </linearGradient>
-        </defs>
         <path
-          id="blob"
-          d="M415,335Q348,420,241.5,434.5Q135,449,102.5,349.5Q70,250,108.5,161Q147,72,244.5,81Q342,90,412,170Q482,250,415,335Z"
-          fill="none"
-          strokeWidth="40px"
-          stroke="url(#gradient)"
-        ></path>
+          d="M50.299 6.573C40.379 16.97 34.043 32.63 33.966 50.181 33.89 67.732 40.088 83.518 49.918 94c-2.85-15.867-.277-33.22 8.136-47.2 2.137-3.551 4.54-6.7 7.144-9.43C62.982 25.116 57.655 14.402 50.3 6.573z"
+          fill="#3423ca"
+        />
+        <path
+          d="M6.181 24.14c-2.92 15.853-.477 33.146 7.875 47.163 8.351 14.017 20.351 21.873 33.206 22.693-9.876-10.44-15.602-26.198-15.602-43.75 0-4.49.406-8.828 1.181-13.018-7.634-8.035-17.058-12.488-26.66-13.089zm87.775.413C60.111 30.71 47.4 65.07 52.304 93.998 86.35 87.84 98.923 53.663 93.956 24.553z"
+          fill="#3423ca"
+        />
       </svg>
     </Link>
   );
