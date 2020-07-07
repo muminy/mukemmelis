@@ -7,7 +7,7 @@ export default function () {
     { id: "Kocaeli", type: "location" },
     { id: "Senior", type: "experience" },
     { id: "İstanbul", type: "location" },
-    { id: "Uzaktan", type: "type" },
+    { id: "Remote", type: "type" },
     { id: "Tam Zamanlı", type: "type" },
     { id: "Ankara", type: "location" },
     { id: "Stajyer", type: "type" },

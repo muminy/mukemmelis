@@ -1,8 +1,4 @@
-import {
-  SearchIcon,
-  LocationIcon,
-} from "../constant/iconsvg";
-import { SehirlerJson } from "../helpers/FormJsons";
+import { SehirlerJson, TipJson, DeneyimJson } from "../helpers/FormJsons";
 
 export default function ({
   isAra,
@@ -50,14 +46,7 @@ export default function ({
               onChange={(text) => getTip(text.target.value)}
             >
               <option value="">bir tip seçin</option>
-              <option value="Uzaktan">Uzaktan</option>
-              <option value="Tam zamanlı">
-                Tam zamanlı
-              </option>
-              <option value="Yarı zamanlı">
-                Yarı zamanlı
-              </option>
-              <option value="Stajyer">Stajyer</option>
+              {TipJson.map(item => <option {...item}>{item.value}</option>)}
             </select>
           </div>
         </div>
@@ -71,8 +60,7 @@ export default function ({
               }
             >
               <option value="">bir tip seçin</option>
-              <option value="Senior">Senior</option>
-              <option value="Junior">Junior</option>
+              {DeneyimJson.map(item => <option {...item}>{item.value}</option>)}
             </select>
           </div>
         </div>
